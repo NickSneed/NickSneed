@@ -7,7 +7,7 @@
     "build": "cls && npx stylelint src/**/*.scss && npm run compile:sass && eslint src && npm run compile:js",
     "compile:sass": "sass --no-source-map --style=compressed src/:dist/",
     "compile:js": "webpack",
-    "deploy": "npm run compile:sass && npm run compile:js && gh-pages -d dist"
+    "deploy": "node confirmDeploy.js"
   },
   "keywords": [],
   "author": "",

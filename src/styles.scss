@@ -1,3 +1,18 @@
+@use 'partials/fonts.scss';
+@use 'partials/mediaqueries.scss' as m;
+
 body {
     background: #000;
+    color: #fff;
+    font-family: "Tiny5", serif;
+    font-weight: 400;
+    font-size: 50px;
+    font-style: normal;
+    line-height: 1.6em;
+    padding: 0 40px;
+
+    @include m.for-large {  
+        font-size: 100px;
+    }
 }
+
