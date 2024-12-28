@@ -22,5 +22,8 @@
     "stylelint-scss": "^6.10.0",
     "webpack": "^5.97.1",
     "webpack-cli": "^6.0.1"
+  },
+  "dependencies": {
+    "three": "^0.171.0"
   }
 }
