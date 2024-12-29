@@ -2,8 +2,6 @@ import * as THREE from 'three';
 
 var webgltest = true;
 
-
-
 var scene = new THREE.Scene(),
     camera = new THREE.PerspectiveCamera(50, window.innerWidth / window.innerHeight, 0.1, 10000),
     renderer,
@@ -15,8 +13,6 @@ function render() {
     x = x + distance;
     camera.position.x = cameraDistance * Math.cos(x);
     camera.position.z = cameraDistance * Math.sin(x);
-    //keep camera rotation
-    //camera.rotation.y -= distance;
 
     requestAnimationFrame(render);
     renderer.render(scene, camera);
@@ -37,13 +33,6 @@ function setupScene() {
 
     camera.position.x = cameraDistance * Math.cos(x);
     camera.position.z = cameraDistance * Math.sin(x);
-    //facing out
-    //camera.rotation.y = 4.7;
-
-    //facing in
-    //camera.rotation.y = 20.5;
-
-    //camera.rotation.y = 15;
 
     if (webgltest) {
         var ambientLight = new THREE.AmbientLight(0xffffff),
@@ -61,8 +50,6 @@ function setupScene() {
         lights[2].position.set(-100, -200, -100);
 
         scene.add(lights[0]);
-        //scene.add(lights[1]);
-        //scene.add(lights[2]);
 
     }
 
@@ -93,17 +80,13 @@ function addElements() {
             color = 0x72f5ff;
         }
 
-        //color = Math.random() * 0x808008 + 0x808080;
-
         if (webgltest) {
-
             material = new THREE.MeshPhongMaterial({
                 color: color,
                 emissive: 0x072534,
                 side: THREE.DoubleSide,
                 shading: THREE.FlatShading
             });
-            //material = new THREE.MeshBasicMaterial({color: color});
             particle = new THREE.Mesh(geometry, material);
         } else {
             material = new THREE.SpriteCanvasMaterial({
@@ -127,30 +110,8 @@ function addElements() {
         }
         group.add(particle);
     }
-    /*
-    var material2 = new THREE.MeshPhongMaterial({
-            color: 0x156289,
-            emissive: 0x072534,
-            side: THREE.DoubleSide,
-            shading: THREE.FlatShading
-        });
-    var particle2 = new THREE.Mesh(geometry, material2);
-    particle2.position.x = 0;
-    particle2.position.y = 0;
-    particle2.position.z = 0;
-    particle2.scale.set(200,200,200);
-    
-    scene.add(particle2);
-    */
 
     render();
-
-    //setTimeout(function () {
-    //$('#viewport').animate({ opacity: 0.8 }, 3000);
-    //}, 3000);
-    //$('#viewport').animate({ opacity: 0.8 }, 3000);
-
-    //$('.arrow-ani').animate({ opacity: 1 }, 500);
 }
 
 function init() {
