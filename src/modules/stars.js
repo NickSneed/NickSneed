@@ -8,44 +8,46 @@ var scene = new THREE.Scene(),
     cameraDistance = 300;
 
 function render() {
+    // Set camera position
     x = x + distance;
     camera.position.x = cameraDistance * Math.cos(x);
     camera.position.z = cameraDistance * Math.sin(x);
 
+    // Render scene
     requestAnimationFrame(render);
     renderer.render(scene, camera);
 }
 
 function setupScene() {
 
-
+    // Create a renderer and add it to the DOM
     renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true });
-
-
     renderer.setSize(window.innerWidth, window.innerHeight);
     renderer.setClearColor(0x000000, 0);
     renderer.setPixelRatio(window.devicePixelRatio);
     document.getElementById('viewport').appendChild(renderer.domElement);
 
+    // Set up camera
     camera.position.x = cameraDistance * Math.cos(x);
     camera.position.z = cameraDistance * Math.sin(x);
 
+    // Set lights
+    var ambientLight = new THREE.AmbientLight(0xffffff, 10, 0);
 
-    var ambientLight = new THREE.AmbientLight(0xffffff),
-        lights = [];
     scene.add(ambientLight);
 
-
-    lights = [];
-    lights[0] = new THREE.PointLight(0xffffff, 1, 0);
-    lights[1] = new THREE.PointLight(0xffffff, 1, 0);
-    lights[2] = new THREE.PointLight(0xffffff, 1, 0);
+    /*
+    var lights = [];
+    lights[0] = new THREE.PointLight(0xffffff, 100, 0);
+    lights[1] = new THREE.PointLight(0xffffff, 100, 0);
+    lights[2] = new THREE.PointLight(0xffffff, 100, 0);
 
     lights[0].position.set(0, 200, 0);
     lights[1].position.set(100, 200, 100);
     lights[2].position.set(-100, -200, -100);
 
     scene.add(lights[0]);
+    */
 }
 
 function addElements() {
@@ -57,8 +59,10 @@ function addElements() {
         color,
         scale;
 
+    // Add group to scene
     scene.add(group);
 
+    // Add particles to group
     for (i = 0; i < 2000; i++) {
 
         if (Math.floor((Math.random() * 10) + 1) > 9) {
@@ -74,7 +78,6 @@ function addElements() {
             shading: THREE.FlatShading
         });
         particle = new THREE.Mesh(geometry, material);
-
         particle.position.x = Math.random() * 2000 - 1000;
         particle.position.y = Math.random() * 2000 - 1000;
         particle.position.z = Math.random() * 2000 - 1000;
@@ -82,17 +85,15 @@ function addElements() {
         if (scale > 8) {
             scale = Math.random() * 20;
         }
-
         particle.scale.set(scale, scale, scale);
         group.add(particle);
     }
-
-    render();
 }
 
 function init() {
     setupScene();
     addElements();
+    render();
 }
 
 export default init;
