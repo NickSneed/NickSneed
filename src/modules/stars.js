@@ -35,14 +35,8 @@ function setupScene() {
     camera.position.z = cameraDistance * Math.sin(x);
 
     // Set lights
-    var ambientLight = new THREE.AmbientLight(0xffffff, 2, 0);
+    var ambientLight = new THREE.AmbientLight(0xffffff, 4, 0);
     scene.add(ambientLight);
-
-    // Add directional light for shadows
-    var directionalLight = new THREE.DirectionalLight(0xffffff, 4);
-    directionalLight.position.set(5, 10, 7.5);
-    directionalLight.castShadow = true;
-    scene.add(directionalLight);
 }
 
 function addElements() {
@@ -83,10 +77,6 @@ function addElements() {
             scale = Math.random() * 20;
         }
         particle.scale.set(scale, scale, scale);
-
-        // Enable shadows
-        particle.castShadow = true;
-        particle.receiveShadow = true;
 
         // Add particle to group
         group.add(particle);
