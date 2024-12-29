@@ -35,14 +35,8 @@ function setupScene() {
     camera.position.z = cameraDistance * Math.sin(x);
 
     // Set lights
-    var ambientLight = new THREE.AmbientLight(0xffffff, 1);
+    var ambientLight = new THREE.AmbientLight(0xffffff, 6);
     scene.add(ambientLight);
-
-    // Add directional light for shadows
-    var directionalLight = new THREE.DirectionalLight(0xffffff, 8);
-    directionalLight.position.set(5, 10, 7.5);
-    directionalLight.castShadow = true;
-    scene.add(directionalLight);
 }
 
 function addElements() {
