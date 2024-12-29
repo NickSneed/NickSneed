@@ -2,6 +2,8 @@
 @use 'partials/mediaqueries.scss' as m;
 
 body {
+    background: #000 url('img/back.jpg') no-repeat center center fixed;
+    background-size: cover;
     color: #fff;
     font-family: "Tiny5", serif;
     font-weight: 400;
@@ -20,8 +22,7 @@ img {
 }
 
 #viewport {
-    background: #000 url('img/back.jpg') no-repeat center center fixed;
-    background-size: cover;
+    filter: blur(1px);
     width: 100%;
     height: 100vh;
     position: fixed;
