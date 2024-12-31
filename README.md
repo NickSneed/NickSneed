@@ -1,5 +1,4 @@
-## Hi there 👋
+## Nick Sneed
 
 # To do
-1. fix background attachment
-2. make mobile stars bigger
+1. make mobile stars bigger
