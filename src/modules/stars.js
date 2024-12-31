@@ -28,7 +28,7 @@ function setupScene() {
     renderer.setSize(window.innerWidth, window.innerHeight);
     renderer.setClearColor(0x000000, 0);
     renderer.setPixelRatio(window.devicePixelRatio);
-    document.getElementById('viewport').appendChild(renderer.domElement);
+    document.querySelector('.stars-3d').appendChild(renderer.domElement);
 
     // Set up camera
     camera.position.x = cameraDistance * Math.cos(x);
@@ -83,10 +83,19 @@ function addElements() {
     }
 }
 
+function adjustSize() {
+    renderer.setSize(window.innerWidth, window.innerHeight);
+    camera.aspect = window.innerWidth / window.innerHeight;
+    camera.updateProjectionMatrix();
+}
+
 function init() {
     setupScene();
     addElements();
     render();
+
+    // Adjust size on resize
+    window.addEventListener("resize", adjustSize);
 }
 
 export default init;
