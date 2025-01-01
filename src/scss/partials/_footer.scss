@@ -1,0 +1,26 @@
+footer {
+    border-top: 1px solid #fff;
+    display: flex;
+    font-size: 30px;
+    font-weight: 200;
+    justify-content: space-between;
+    line-height: 1em;
+
+    .social {
+        align-content: flex-start;
+        
+        a {
+            text-decoration: none;
+        }
+
+        img,
+        svg {
+            height: 30px;
+            margin: 30px 14px 0 0;
+        }
+    }
+
+    .copy {
+        align-content: flex-end;
+    }
+}

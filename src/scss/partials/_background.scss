@@ -3,6 +3,7 @@
     height: 100vh;
     position: fixed;
     top: 0;
+    transition: opacity 0.5s;
     left: 0;
     z-index: -1;
 
@@ -16,7 +17,7 @@
     }
 
     .bg-img {
-        background: #000 url('../img/back.jpg') no-repeat center center fixed;
+        background: #222344 url('../img/back.jpg') no-repeat center center fixed;
         background-size: cover;
         z-index: 1;
     }
@@ -24,5 +25,9 @@
     .stars-3d {
         filter: blur(1px);
         z-index: 2;
+    }
+
+    &.scrolled {
+        opacity: 0.3;
     }
 }
