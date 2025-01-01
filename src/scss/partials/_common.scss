@@ -1,8 +1,9 @@
 @use 'mediaqueries.scss' as m;
+@use 'colors.scss' as c;
 
 body {
-    background: #000;
-    color: #fff;
+    background: c.$black;
+    color: c.$white;
     font-family: "Poppins", serif;
     font-size: 10px;
     margin: 0;
@@ -43,12 +44,17 @@ p.txt-l {
 }
 
 .btn {
-    background: #b33c3c;
-    color: #fff;
+    background: c.$red;
+    border-radius: 5px;
+    color: c.$white;
     display: inline-block;
     font-size: 20px;
     padding: 0.5em 1em;
     text-decoration: none;
+
+    &:hover {
+        background: c.$darkred;
+    }
 }
 
 .row {

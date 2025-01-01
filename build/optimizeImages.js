@@ -41,13 +41,10 @@ fs.readdir(directoryPath, (err, files) => {
 
         if (fileExt === ".jpg" || fileExt === ".png" || fileExt === ".jpeg") {
             const distFilePath = filePath.replace('src\\', 'dist\\');
-            console.log(distFilePath);
             fs.access(distFilePath, fs.constants.F_OK, (err) => {
                 if (err) {
                     // File does not exist in dist folder, process it
                     processFile(filePath, distFilePath);
-                } else {
-                    console.log(`File already exists in dist folder: ${distFilePath}`);
                 }
             });
         }

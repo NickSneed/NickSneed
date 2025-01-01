@@ -1,7 +1,8 @@
 @use 'mediaqueries.scss' as m;
+@use 'colors.scss' as c;
 
 .intro {
-    background: #222344 url('../img/back.jpg') no-repeat left center;
+    background: c.$darkblue url('../img/back.jpg') no-repeat left center;
     background-size: cover;
     min-height: 400px;
     overflow: hidden;
