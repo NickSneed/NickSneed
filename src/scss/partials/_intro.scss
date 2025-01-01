@@ -31,6 +31,7 @@
         @include m.for-large {  
             height: 300px;
             left: 60px;
+            top: 60px;
         }
     }
 
@@ -51,6 +52,7 @@
         @include m.for-large {  
             font-size: 200px;
             left: 60px;
+            bottom: 60px;
         }
     }
 
