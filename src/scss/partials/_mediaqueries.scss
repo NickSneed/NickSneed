@@ -1,5 +1,11 @@
-@mixin for-large {
+@mixin for-medium {
     @media (width >= 768px) {
+        @content;
+    }
+}
+
+@mixin for-large {
+    @media (width >= 1024px) {
         @content;
     }
 }

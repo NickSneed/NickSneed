@@ -1,10 +1,21 @@
+@use 'mediaqueries.scss' as m;
+
 footer {
-    border-top: 1px solid #fff;
-    display: flex;
-    font-size: 30px;
     font-weight: 200;
-    justify-content: space-between;
     line-height: 1em;
+    padding: 40px;
+
+    .content {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    hr {
+        border: 0;
+        border-top: 1px solid #fff;
+        margin: 0;
+        width: 100%;
+    }
 
     .social {
         align-content: flex-start;
@@ -15,12 +26,25 @@ footer {
 
         img,
         svg {
-            height: 30px;
-            margin: 30px 14px 0 0;
+            height: 20px;
+            margin: 20px 14px 0 0;
+        }
+
+        @include m.for-large {  
+            img,
+            svg {
+                height: 30px;
+                margin: 30px 14px 0 0;
+            }
         }
     }
 
     .copy {
         align-content: flex-end;
+        font-size: 20px;
+
+        @include m.for-large {  
+            font-size: 30px;
+        }
     }
 }
