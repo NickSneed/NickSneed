@@ -1,3 +1,5 @@
+@use 'mediaqueries.scss' as m;
+
 body {
     background: #000;
     color: #fff;
@@ -7,6 +9,86 @@ body {
     padding: 0;
 }
 
-.max-w {
-    max-width: 1200px;
+h1,
+h2,
+h3 {
+    font-size: 24px;
+    font-weight: 600;
+
+    @include m.for-large {  
+        font-size: 34px;
+    }
+}
+
+p {
+    font-size: 20px;
+    font-weight: 200;
+
+    @include m.for-large {  
+        font-size: 30px;
+    }
+}
+
+p.txt-l {
+    font-size: 20px;
+    font-weight: 200;
+
+    @include m.for-medium {  
+        font-size: 30px;
+    }
+
+    @include m.for-large {  
+        font-size: 50px;
+    }
+}
+
+.btn {
+    background: #b33c3c;
+    color: #fff;
+    display: inline-block;
+    font-size: 20px;
+    padding: 0.5em 1em;
+    text-decoration: none;
+}
+
+.row {
+    img {
+        max-width: 150px;
+        width: 100%;
+
+        @include m.for-medium { 
+            max-width: none;
+        }
+
+        &.wide-sm {
+            max-width: 150px;
+        }
+    }
+
+    @include m.for-medium { 
+        display: flex;
+        justify-content: space-between;
+
+        &.align-vc {
+            align-items: center;
+        }
+
+        .col-1,
+        .col-2,
+        .col-3 {
+            padding: 2%;
+        }
+
+        .col-1 {
+            width: 33.3333%
+        }
+
+        .col-2 {
+            width: 66.6666%
+        }
+
+        .col-3 {
+            width: 100%
+        }
+    }
 }

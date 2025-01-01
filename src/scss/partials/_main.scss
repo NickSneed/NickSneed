@@ -6,17 +6,4 @@
     @include m.for-large {  
         padding: 20px 60px 0;
     }
-
-    p {
-        font-size: 20px;
-        font-weight: 200;
-
-        @include m.for-medium {  
-            font-size: 30px;
-        }
-
-        @include m.for-large {  
-            font-size: 50px;
-        }
-    }
 }
