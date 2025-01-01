@@ -3,6 +3,10 @@
 .main {
     padding: 20px 40px 0;
 
+    @include m.for-large {  
+        padding: 20px 60px 0;
+    }
+
     p {
         font-size: 20px;
         font-weight: 200;

@@ -3,9 +3,14 @@
 footer {
     font-weight: 200;
     line-height: 1em;
-    padding: 40px;
+    padding: 20px 40px 40px;
+
+    @include m.for-large { 
+        padding: 20px 60px 40px;
+    }
 
     .content {
+        align-items: center;
         display: flex;
         justify-content: space-between;
     }
@@ -13,7 +18,7 @@ footer {
     hr {
         border: 0;
         border-top: 1px solid #fff;
-        margin: 0;
+        margin: 0 0 10px;
         width: 100%;
     }
 
@@ -27,14 +32,14 @@ footer {
         img,
         svg {
             height: 20px;
-            margin: 20px 14px 0 0;
+            margin: 0 14px 0 0;
         }
 
         @include m.for-large {  
             img,
             svg {
                 height: 30px;
-                margin: 30px 14px 0 0;
+                margin: 0 20px 0 0;
             }
         }
     }

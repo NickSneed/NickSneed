@@ -1,23 +1,28 @@
 @use 'mediaqueries.scss' as m;
 
 .intro {
-    background: #222344 url('../img/back.jpg') no-repeat center center;
+    background: #222344 url('../img/back.jpg') no-repeat left center;
     background-size: cover;
-    height: 100vh;
-    min-height: 600px;
+    min-height: 400px;
     overflow: hidden;
     position: relative;
     width: 100%;
+
+    @include m.for-medium {  
+        min-height: 500px;
+        height: 100vh;
+    }
 
     @include m.for-large {  
         min-height: 750px;
     }
 
     img {
-        height: 100px;
-        left: 40px;
+        height: 120px;
+        left: 35px;
         position: absolute;
-        top: 40px;
+        top: 35px;
+        z-index: 2;
 
         @include m.for-medium {  
             height: 200px;
@@ -25,17 +30,19 @@
 
         @include m.for-large {  
             height: 300px;
+            left: 60px;
         }
     }
 
     h1 {
         bottom: 40px;
         font-family: "Tiny5", serif;
-        font-size: 50px;
+        font-size: 60px;
         left: 40px;
         line-height: 0.8em;
         margin: 0;
         position: absolute;
+        z-index: 2;
 
         @include m.for-medium {  
             font-size: 100px;
@@ -43,12 +50,8 @@
     
         @include m.for-large {  
             font-size: 200px;
+            left: 60px;
         }
-    }
-
-    .content {
-        position: relative;
-        z-index: 2;
     }
 
     .stars-3d {
