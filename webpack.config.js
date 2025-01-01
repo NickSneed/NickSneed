@@ -1,3 +1,5 @@
+/*global module, require, __dirname*/
+
 const path = require('path');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 
@@ -15,5 +17,9 @@ module.exports = {
                 { from: 'src/img', to: 'img' }
             ]
         })
-    ]
+    ],
+    performance: {
+        maxAssetSize: 512000,
+        maxEntrypointSize: 512000
+    }
 };
