@@ -65,6 +65,16 @@ p.txt-l {
         }
     }
 
+    .col-1,
+    .col-2,
+    .col-3 {
+        padding: 2em 0 6em;
+    }
+
+    .no-padding-sm {
+        padding: 0;
+    }
+
     @include m.for-medium { 
         display: flex;
         justify-content: space-between;
