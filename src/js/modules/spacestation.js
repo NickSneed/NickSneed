@@ -1,5 +1,5 @@
 function init() {
-    fetch('http://api.open-notify.org/iss-now.json')
+    fetch('https://api.open-notify.org/iss-now.json')
         .then(response => response.json())
         .then(data => {
             const { latitude, longitude }= data.iss_position;
