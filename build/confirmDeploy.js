@@ -1,5 +1,7 @@
-// confirmDeploy.js
-const readline = require('readline');
+/* global process */
+
+import readline from 'readline';
+import { exec } from 'child_process';
 
 const rl = readline.createInterface({
     input: process.stdin,
@@ -9,7 +11,6 @@ const rl = readline.createInterface({
 rl.question('Are you sure you want to deploy? (yes/no) ', (answer) => {
     if (answer.toLowerCase() === 'yes') {
         console.log('Deploying...');
-        const { exec } = require('child_process');
         exec('npm run build && gh-pages -d dist --cname nicksneed.com', (err, stdout, stderr) => {
             if (err) {
                 console.error(`Error: ${err.message}`);

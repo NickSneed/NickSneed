@@ -1,11 +1,12 @@
 {
     "name": "nicksneed",
     "version": "1.0.0",
+    "type": "module",
     "scripts": {
         "test": "stylelint src/scss && eslint src/js",
-        "build": "cls && npm run test && npm run sass && webpack",
+        "build": "cls && npm run test && npm run sass && webpack && node build/optimizeImages.js",
         "sass": "sass --no-source-map --style=compressed src/scss/:dist/css/",
-        "deploy": "node confirmDeploy.js"
+        "deploy": "node build/confirmDeploy.js"
     },
     "keywords": [],
     "author": "",
@@ -13,12 +14,14 @@
     "description": "",
     "devDependencies": {
         "copy-webpack-plugin": "^12.0.2",
+        "dotenv": "^16.4.7",
         "eslint": "^9.17.0",
         "gh-pages": "^6.2.0",
         "sass": "^1.83.0",
         "stylelint": "^16.12.0",
         "stylelint-config-standard": "^36.0.1",
         "stylelint-scss": "^6.10.0",
+        "tinify": "^1.7.1",
         "webpack": "^5.97.1",
         "webpack-cli": "^6.0.1"
     },
