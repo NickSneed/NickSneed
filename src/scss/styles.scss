@@ -4,8 +4,8 @@
 body {
     background: #000;
     color: #fff;
-    font-family: "Tiny5", serif;
-    font-weight: 400;
+    font-family: "Poppins", serif;
+    font-weight: 200;
     font-size: 50px;
     font-style: normal;
     line-height: 1.6em;
@@ -16,10 +16,25 @@ body {
     }
 }
 
+h1 {
+    font-family: "Tiny5", serif;
+}
+
 img {
     height: 300px;
 }
 
+.social {
+    a {
+        text-decoration: none;
+    }
+
+    img,
+    svg {
+        height: 50px;
+        margin: 0 0 0 5px;
+    }
+}
 
 .bg {
     width: 100%;
@@ -39,7 +54,7 @@ img {
     }
 
     .bg-img {
-        background: #000 url('img/back.jpg') no-repeat center center fixed;
+        background: #000 url('../img/back.jpg') no-repeat center center fixed;
         background-size: cover;
         z-index: 1;
     }

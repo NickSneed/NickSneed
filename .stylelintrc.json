@@ -11,6 +11,7 @@
         "alpha-value-notation": "number",
         "color-function-notation": null,
         "no-invalid-position-at-import-rule": null,
-        "selector-class-pattern": null
+        "selector-class-pattern": null,
+        "font-family-name-quotes": null
     }
 }

@@ -1,11 +1,10 @@
 {
   "name": "nicksneed",
   "version": "1.0.0",
-  "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "cls && npx stylelint src/**/*.scss && npm run compile:sass && eslint src && npm run compile:js",
-    "compile:sass": "sass --no-source-map --style=compressed src/:dist/",
+    "compile:sass": "sass --no-source-map --style=compressed src/scss/:dist/css/",
     "compile:js": "webpack",
     "deploy": "node confirmDeploy.js"
   },
@@ -14,6 +13,7 @@
   "license": "ISC",
   "description": "",
   "devDependencies": {
+    "copy-webpack-plugin": "^12.0.2",
     "eslint": "^9.17.0",
     "gh-pages": "^6.2.0",
     "sass": "^1.83.0",
