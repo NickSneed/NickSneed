@@ -14,6 +14,8 @@ import dotenv from "dotenv";
 dotenv.config();
 tinify.key = process.env.TINIFY_API_KEY;
 
+console.log(process.env.TINIFY_API_KEY);
+
 // Specify the directory to process
 const directoryPath = "./src/img";
 

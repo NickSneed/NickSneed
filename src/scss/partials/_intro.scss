@@ -57,6 +57,13 @@
         }
     }
 
+    .space-station {
+        position: absolute;
+        right: 30px;
+        top: 35px;
+        z-index: 2;
+    }
+
     .stars-3d {
         filter: blur(1px);
         height: 100vh;
