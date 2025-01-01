@@ -1,5 +1,10 @@
 /* global process */
 
+/*
+Create a .env file with TINIFY_API_KEY=
+https://tinify.com/dashboard/api
+*/
+
 import tinify from "tinify";
 import fs from "fs";
 import path from "path";
@@ -7,7 +12,7 @@ import dotenv from "dotenv";
 
 // Set your API key
 dotenv.config();
-tinify.key = process.env.API_KEY;
+tinify.key = process.env.TINIFY_API_KEY;
 
 // Specify the directory to process
 const directoryPath = "./src/img";

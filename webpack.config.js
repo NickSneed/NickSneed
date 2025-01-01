@@ -1,9 +1,12 @@
-/*global module, require, __dirname*/
+import path from "path";
+import { fileURLToPath } from 'url';
+import CopyWebpackPlugin from "copy-webpack-plugin";
 
-const path = require('path');
-const CopyWebpackPlugin = require('copy-webpack-plugin');
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
 
-module.exports = {
+
+export default {
     entry: './src/js/main.js',
     mode: 'production',
     output: {

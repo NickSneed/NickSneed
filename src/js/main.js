@@ -1,3 +1,3 @@
-import stars from "./modules/stars";
+import stars from "./modules/stars.js";
 
 stars();

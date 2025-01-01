@@ -4,7 +4,7 @@
     "type": "module",
     "scripts": {
         "test": "stylelint src/scss && eslint src/js",
-        "build": "cls && npm run test && npm run sass && webpack && node build/optimizeImages.js",
+        "build": "cls && npm run test && npm run sass && webpack && node --no-deprecation build/optimizeImages.js",
         "sass": "sass --no-source-map --style=compressed src/scss/:dist/css/",
         "deploy": "node build/confirmDeploy.js"
     },
