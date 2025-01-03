@@ -1,3 +1,0 @@
-make mobile stars bigger
-compile svgs on build
-lazy load three js
