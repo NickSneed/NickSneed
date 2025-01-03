@@ -1,29 +1,67 @@
 import path from "path";
 import { fileURLToPath } from 'url';
+import HtmlWebpackPlugin from 'html-webpack-plugin';
 import CopyWebpackPlugin from "copy-webpack-plugin";
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
-
 export default {
-    entry: './src/js/main.js',
+    entry: './src/js/app.js',
     mode: 'production',
     output: {
-        filename: 'js/main.js',
+        filename: 'app.js',
         path: path.resolve(__dirname, 'dist'),
+    },
+    module: {
+        rules: [
+            {
+                test: /\.(?:js|mjs|cjs)$/,
+                exclude: /node_modules/,
+                use: {
+                    loader: 'babel-loader',
+                    options: {
+                        presets: [
+                            ['@babel/preset-env', { targets: "defaults" }]
+                        ]
+                    }
+                }
+            },
+            {
+                test: /\.s[ac]ss$/i,
+                use: [
+                    "style-loader",
+                    "css-loader",
+                    "sass-loader"
+                ],
+            },
+            {
+                test: /\.(png|jpe?g|gif|svg)$/i,
+                issuer: /\.(js|mjs|cjs)$/,
+                use: [
+                    {
+                        loader: 'file-loader',
+                    }
+                ]
+            }
+        ]
     },
     plugins: [
         new CopyWebpackPlugin({
             patterns: [
-                { from: 'src/index.html', to: 'index.html' },
-                { from: 'src/favicon.ico', to: 'favicon.ico' },
-                { from: 'src/svg', to: 'img' }
+                { from: 'src/favicon.ico', to: 'favicon.ico' }
             ]
+        }),
+        new HtmlWebpackPlugin({
+            template: './src/index.html',
         })
     ],
     performance: {
         maxAssetSize: 512000,
         maxEntrypointSize: 512000
+    },
+    devServer: {
+        port: 3000,
+        open: true
     }
 };

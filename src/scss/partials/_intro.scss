@@ -2,7 +2,7 @@
 @use 'colors.scss' as c;
 
 .intro {
-    background: c.$darkblue url('../img/back.jpg') no-repeat left center;
+    background: c.$darkblue url('../img/comp/back.jpg') no-repeat left center;
     background-size: cover;
     min-height: 400px;
     overflow: hidden;
