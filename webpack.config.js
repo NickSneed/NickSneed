@@ -54,7 +54,8 @@ export default {
     plugins: [
         new CopyWebpackPlugin({
             patterns: [
-                { from: 'src/favicon.ico', to: 'favicon.ico' }
+                { from: 'src/favicon.ico', to: 'favicon.ico' },
+                { from: 'src/img/comp/', to: 'img/comp/' }
             ]
         }),
         new HtmlWebpackPlugin({
@@ -67,6 +68,11 @@ export default {
     },
     devServer: {
         port: 3000,
-        open: false
+        open: false,
+        compress: true,
+        static: { 
+            directory: path.join(__dirname, './dist/'),
+            publicPath: '/'
+        }
     }
 };
