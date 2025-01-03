@@ -1,8 +1,8 @@
 import logoInsta from '../../img/svg/logo-instagram.svg'
-import logoTumblr from '../../img/unc/logo-tumblr.png'
-import logoGitHub from '../../img/unc/logo-github.png'
+import logoTumblr from '../../img/comp/logo-tumblr.png'
+import logoGitHub from '../../img/comp/logo-github.png'
 import logoX from '../../img/svg/logo-x.svg'
-import logoLinkedIn from '../../img/unc/logo-linkedin.png'
+import logoLinkedIn from '../../img/comp/logo-linkedin.png'
 
 function Footer() {
     const html = (

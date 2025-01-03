@@ -1,7 +1,7 @@
-import familyImg from '../../img/unc/family.png'
-import headerInsta from '../../img/unc/header-insta.png'
-import headerTumblr from '../../img/unc/header-tumblr.png'
-import headerGitHub from '../../img/unc/header-github.png'
+import familyImg from '../../img/comp/family.png'
+import headerInsta from '../../img/comp/header-insta.png'
+import headerTumblr from '../../img/comp/header-tumblr.png'
+import headerGitHub from '../../img/comp/header-github.png'
 
 function Main() {
     const html = (

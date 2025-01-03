@@ -5,11 +5,10 @@
     "main": "src/js/app.js",
     "scripts": {
         "test": "stylelint src/scss && eslint src/js/",
-        "build": "cls && npm run test && npm run sass && webpack",
+        "build": "cls && rimraf dist && npm run test && npm run sass && node --no-deprecation build/optimizeImages.js && webpack",
         "sass": "sass --no-source-map --style=compressed src/scss/:dist/css/",
-        "optimages": "node --no-deprecation build/optimizeImages.js", 
         "deploy": "node build/confirmDeploy.js",
-        "start": "webpack serve --mode development"
+        "start": "npm run build && webpack serve --mode development"
     },
     "keywords": [],
     "author": "",
@@ -28,6 +27,7 @@
         "file-loader": "^6.2.0",
         "gh-pages": "^6.2.0",
         "html-webpack-plugin": "^5.6.3",
+        "rimraf": "^6.0.1",
         "sass": "^1.83.0",
         "sass-loader": "^16.0.4",
         "style-loader": "^4.0.0",
