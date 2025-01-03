@@ -4,8 +4,6 @@ import headerTumblr from '../../img/comp/header-tumblr.png'
 import headerGitHub from '../../img/comp/header-github.png'
 import SocialTile from './SocialTile.js'
 
-
-
 function Main() {
     const html = (
         <>
@@ -54,4 +52,3 @@ function Main() {
 }
 
 export default Main;
-

@@ -1,4 +1,3 @@
-
 import React, { useEffect } from 'react';
 import logo from '../../img/svg/ns-logo.svg'
 import {
@@ -102,7 +101,7 @@ function adjustSize() {
     camera.updateProjectionMatrix();
 }
 
-function init() {
+function initStars() {
     setupScene();
     addElements();
     render();
@@ -112,9 +111,7 @@ function init() {
 }
 
 function Intro() {
-    useEffect(() => {
-        init();
-    }, []);
+    useEffect(initStars, []);
 
     const html = (
         <>
