@@ -2,6 +2,9 @@ import familyImg from '../../img/comp/family.png'
 import headerInsta from '../../img/comp/header-insta.png'
 import headerTumblr from '../../img/comp/header-tumblr.png'
 import headerGitHub from '../../img/comp/header-github.png'
+import SocialTile from './SocialTile.js'
+
+
 
 function Main() {
     const html = (
@@ -17,28 +20,31 @@ function Main() {
                 </div>
                 <div className="row">
                     <div className="col-1">
-                        <img src={headerInsta} alt="Game Boy Camera" className="wide-sm" />
-                        <h2>Instagram</h2>
-                        <p>
-                            Reliving childhood memories, one pixel at a time on my Instagram. Exploring the world through the limited palette of the Game Boy Camera.
-                        </p>
-                        <a href="https://www.instagram.com/bobrumbly/" className="btn">Shoot</a>
+                        <SocialTile 
+                            img={headerInsta} 
+                            title="Instagram" 
+                            text="Reliving childhood memories, one pixel at a time on my Instagram. Exploring the world through the limited palette of the Game" 
+                            link="https://www.instagram.com/bobrumbly/"
+                            alt="Game Boy Camera"
+                        />
                     </div>
                     <div className="col-1">
-                        <img src={headerTumblr} alt="Tumblr" className="wide-sm" />
-                        <h2>Tumblr</h2>
-                        <p>
-                            Tumblr is my digital sketchbook! I love creating art inspired by my favorite video games. View my latest creations!
-                        </p>
-                        <a href="https://bobrumbly.com" className="btn">View</a>
+                        <SocialTile
+                            img={headerTumblr}
+                            title="Tumblr"
+                            text="Tumblr is my digital sketchbook! I love creating art inspired by my favorite video games. View my latest creations!"
+                            link="https://bobrumbly.com"
+                            alt="Tumblr"
+                        />
                     </div>
                     <div className="col-1">
-                        <img src={headerGitHub} alt="Tumblr" className="wide-sm" />
-                        <h2>GitHub</h2>
-                        <p>
-                            Browse my GitHub! I love coding and exploring new technologies. This is where I share my experiments and creations.
-                        </p>
-                        <a href="https://github.com/NickSneed/" className="btn">Play</a>
+                        <SocialTile
+                            img={headerGitHub}
+                            title="GitHub"
+                            text="Browse my GitHub! I love coding and exploring new technologies. This is where I share my experiments and creations."
+                            link="https://github.com/NickSneed/"
+                            alt="GitHub"
+                        />
                     </div>
                 </div>
             </div>

@@ -1,10 +1,20 @@
 
 import React, { useEffect } from 'react';
 import logo from '../../img/svg/ns-logo.svg'
-import * as THREE from 'three';
+import {
+    Scene, 
+    PerspectiveCamera, 
+    WebGLRenderer, 
+    PCFSoftShadowMap, 
+    AmbientLight, 
+    Group, 
+    SphereGeometry,
+    MeshStandardMaterial,
+    Mesh
+} from 'three';
 
-const scene = new THREE.Scene(),
-    camera = new THREE.PerspectiveCamera(50, window.innerWidth / window.innerHeight, 0.1, 10000),
+const scene = new Scene(),
+    camera = new PerspectiveCamera(50, window.innerWidth / window.innerHeight, 0.1, 10000),
     distance = 0.001,
     cameraDistance = 300;
 
@@ -25,9 +35,9 @@ function render() {
 function setupScene() {
 
     // Create a renderer and add it to the DOM
-    renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true });
+    renderer = new WebGLRenderer({ antialias: true, alpha: true });
     renderer.shadowMap.enabled = true;
-    renderer.shadowMap.type = THREE.PCFSoftShadowMap;
+    renderer.shadowMap.type = PCFSoftShadowMap;
     renderer.setSize(window.innerWidth, window.innerHeight);
     renderer.setClearColor(0x000000, 0);
     renderer.setPixelRatio(window.devicePixelRatio);
@@ -38,16 +48,16 @@ function setupScene() {
     camera.position.z = cameraDistance * Math.sin(x);
 
     // Set lights
-    var ambientLight = new THREE.AmbientLight(0xffffff, 6);
+    var ambientLight = new AmbientLight(0xffffff, 6);
     scene.add(ambientLight);
 }
 
 function addElements() {
-    let group = new THREE.Group(),
+    let group = new Group(),
         i,
         material,
         particle,
-        geometry = new THREE.SphereGeometry(0.2, 10, 10),
+        geometry = new SphereGeometry(0.2, 10, 10),
         color,
         scale;
 
@@ -65,11 +75,11 @@ function addElements() {
         }
 
         // Create particle
-        material = new THREE.MeshStandardMaterial({
+        material = new MeshStandardMaterial({
             color: color,
             flatShading: false
         });
-        particle = new THREE.Mesh(geometry, material);
+        particle = new Mesh(geometry, material);
 
         // Set particle position and scale
         particle.position.x = Math.random() * 2000 - 1000;
@@ -105,6 +115,7 @@ function Intro() {
     useEffect(() => {
         init();
     }, []);
+
     const html = (
         <>
             <div className="intro">
