@@ -17,7 +17,7 @@ tinify.key = process.env.TINIFY_API_KEY;
 console.log(process.env.TINIFY_API_KEY);
 
 // Specify the directory to process
-const directoryPath = "./src/img";
+const directoryPath = "./src/img/unc/";
 
 // Function to process a single file
 async function processFile(filePath, distFilePath) {
@@ -42,7 +42,7 @@ fs.readdir(directoryPath, (err, files) => {
         const fileExt = path.extname(filePath).toLowerCase();
 
         if (fileExt === ".jpg" || fileExt === ".png" || fileExt === ".jpeg") {
-            const distFilePath = filePath.replace('src\\', 'dist\\');
+            const distFilePath = filePath.replace('unc\\', 'comp\\');
             fs.access(distFilePath, fs.constants.F_OK, (err) => {
                 if (err) {
                     // File does not exist in dist folder, process it

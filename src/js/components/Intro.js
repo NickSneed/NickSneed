@@ -1,3 +1,6 @@
+
+import React, { useEffect } from 'react';
+import logo from '../../img/svg/ns-logo.svg'
 import * as THREE from 'three';
 
 const scene = new THREE.Scene(),
@@ -98,4 +101,20 @@ function init() {
     window.addEventListener("resize", adjustSize);
 }
 
-export default init;
+function Intro() {
+    useEffect(() => {
+        init();
+    }, []);
+    const html = (
+        <>
+            <div className="intro">
+                <img src={logo} alt="Nick Sneed Logo"/>
+                <h1>Hello &amp; <br />welcome.</h1>
+                <div className="stars-3d"></div>
+            </div>
+        </>
+    )
+    return html;
+}
+
+export default Intro;
