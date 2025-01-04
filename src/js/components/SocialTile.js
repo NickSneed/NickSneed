@@ -1,7 +1,8 @@
 import Img from './Img.js';
 import PropTypes from 'prop-types';
 
-function SocialTile(props) {
+// SocialTile component
+const SocialTile = (props) => {
     const {img, title, text, link, alt, linkTxt} = props;
     const html = (
         <>
@@ -14,6 +15,7 @@ function SocialTile(props) {
     return html;
 }
 
+// Define the prop types for the component
 SocialTile.propTypes = {
     img: PropTypes.string.isRequired,
     title: PropTypes.string.isRequired,

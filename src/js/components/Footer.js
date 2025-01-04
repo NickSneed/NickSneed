@@ -1,12 +1,15 @@
 import Img from './Img.js';
+import Copy from './Copy.js';
+
+// Import images
 import logoInsta from '../../img/svg/logo-instagram.svg'
 import logoTumblr from '../../img/comp/logo-tumblr.png'
 import logoGitHub from '../../img/comp/logo-github.png'
 import logoX from '../../img/svg/logo-x.svg'
 import logoLinkedIn from '../../img/comp/logo-linkedin.png'
-import Copy from './Copy.js';
 
-function Footer() {
+// Footer component
+const Footer = () => {
     const html = (
         <>
             <footer>

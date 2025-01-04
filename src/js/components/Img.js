@@ -1,13 +1,15 @@
 import { LazyLoadImage } from 'react-lazy-load-image-component';
 import PropTypes from 'prop-types';
 
+// Function to animate the loading of an image
 const loadingAnimation = (e) => {
     setTimeout(function () {
         e.target.style.opacity = 1;
     }, 50);
 }
 
-function Img(props) {
+// Img component
+const Img = (props) => {
 
     const { src, srcSmall, alt, className, percent, width, height } = props;
     const style = {
@@ -15,6 +17,7 @@ function Img(props) {
         transition: 'opacity 1s linear 0s'
     }
 
+    // Base HTML for an image
     let html = (
         <>
             <LazyLoadImage
@@ -30,6 +33,7 @@ function Img(props) {
         </>
     )
 
+    // If a small image is provided, wrap the image in a picture element
     if (srcSmall) {
         html = (
             <>
@@ -41,6 +45,7 @@ function Img(props) {
         )
     }
 
+    // If a percentage is provided, wrap the image in a div with a spacer
     if (percent) {
         html = (
             <>
@@ -57,6 +62,7 @@ function Img(props) {
     return html;
 }
 
+// Define the prop types for the component
 Img.propTypes = {
     src: PropTypes.string.isRequired,
     srcSmall: PropTypes.string.notRequired,

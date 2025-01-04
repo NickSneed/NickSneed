@@ -1,12 +1,15 @@
 import Img from './Img.js';
+import SocialTile from './SocialTile.js';
+
+// Import images
 import familyImg from '../../img/comp/family.png';
 import familyImgSmall from '../../img/comp/family-small.png';
 import headerInsta from '../../img/comp/header-insta.png';
 import headerTumblr from '../../img/comp/header-tumblr.png';
 import headerGitHub from '../../img/comp/header-github.png';
-import SocialTile from './SocialTile.js';
 
-function Main() {
+// Main component
+const Main = () => {
     const html = (
         <>
             <div className="main">

@@ -1,16 +1,23 @@
-import logo from '../../img/svg/ns-logo.svg';
 import { lazy, Suspense, useEffect } from 'react';
 import Img from './Img.js';
 
+// Import images
+import logo from '../../img/svg/ns-logo.svg';
+
+// Lazy load the Stars component
 const Stars = lazy(() => import('./Stars.js'));
 
-function Intro() {
+// Loading animation
+const loadingAnimation = () => {
+    setTimeout(function () {
+        document.querySelector('.intro h1').style.opacity = 1;
+    }, 50);
+}
 
-    useEffect(() => {
-        setTimeout(function () {
-            document.querySelector('.intro h1').style.opacity = 1;
-        }, 50);
-    }, [])
+// Intro component
+const Intro = () => {
+
+    useEffect(loadingAnimation, [])
 
     const html = (<>
             <div className="intro">

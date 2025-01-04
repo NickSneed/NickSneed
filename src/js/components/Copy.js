@@ -1,14 +1,16 @@
-function Copy() {
+// Copy component
+const Copy = () => {
 
+    // Get the current year
     const year = new Date().getFullYear();
 
     const html = (
-            <>
-                <div className="copy">
-                    <p>&copy; 2024-{year} Nick Sneed</p>
-                </div>
-            </>
-        )
+        <>
+            <div className="copy">
+                <p>&copy; 2024-{year} Nick Sneed</p>
+            </div>
+        </>
+    )
 
     return html;
 }

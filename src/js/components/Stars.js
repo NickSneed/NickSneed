@@ -31,7 +31,6 @@ const render = () => {
 }
 
 const setupScene = () => {
-
     // Create a renderer and add it to the DOM
     renderer = new WebGLRenderer({ antialias: true, alpha: true });
     renderer.shadowMap.enabled = true;
@@ -119,7 +118,8 @@ const initStars = () => {
     window.addEventListener("resize", adjustSize);
 }
 
-function Stars() {
+// Stars component
+const Stars = () => {
     useEffect(() => {
         initStars();
     }, []);
