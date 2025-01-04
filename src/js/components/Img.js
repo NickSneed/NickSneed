@@ -35,7 +35,7 @@ function Img(props) {
             <>
                 <div className={className ? 'img-percent ' + className : 'img-percent'}>
                     <div className="spacer" style={{
-                        'padding-top': percent + '%'
+                        'paddingTop': percent + '%'
                     }}></div>
                     {html}
                 </div>
