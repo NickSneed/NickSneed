@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 const loadingAnimation = (e) => {
     setTimeout(function () {
         e.target.style.opacity = 1;
-    }, 100);
+    }, 50);
 }
 
 function Img(props) {
@@ -12,7 +12,7 @@ function Img(props) {
     const { src, alt, className, percent, width, height } = props;
     const style = {
         opacity: 0,
-        transition: 'opacity 1s linear 0.1s'
+        transition: 'opacity 1s linear 0s'
     }
 
     let html = (

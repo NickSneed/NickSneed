@@ -4,6 +4,7 @@ import logoTumblr from '../../img/comp/logo-tumblr.png'
 import logoGitHub from '../../img/comp/logo-github.png'
 import logoX from '../../img/svg/logo-x.svg'
 import logoLinkedIn from '../../img/comp/logo-linkedin.png'
+import Copy from './Copy.js';
 
 function Footer() {
     const html = (
@@ -28,9 +29,7 @@ function Footer() {
                             <Img src={logoLinkedIn} alt="Visit my LinkedIn" />
                         </a>
                     </div>
-                    <div className="copy">
-                        <p>&copy; 2025 Nick Sneed</p>
-                    </div>
+                    <Copy />
                 </div>
             </footer>
         </>
