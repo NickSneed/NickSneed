@@ -19,43 +19,37 @@ const Img = (props) => {
 
     // Base HTML for an image
     let html = (
-        <>
-            <LazyLoadImage
-                style={style}
-                src={src}
-                alt={alt}
-                width={width}
-                height={height}
-                className={className}
-                onLoad={function (e) {
-                    loadingAnimation(e)
-                }} />
-        </>
+        <LazyLoadImage
+            style={style}
+            src={src}
+            alt={alt}
+            width={width}
+            height={height}
+            className={className}
+            onLoad={function (e) {
+                loadingAnimation(e)
+            }} />
     )
 
     // If a small image is provided, wrap the image in a picture element
     if (srcSmall) {
         html = (
-            <>
-                <picture>
-                    <source srcSet={srcSmall} media="(max-width: 959px)" />
-                    {html}
-                </picture>
-            </>
+            <picture>
+                <source srcSet={srcSmall} media="(max-width: 959px)" />
+                {html}
+            </picture>
         )
     }
 
     // If a percentage is provided, wrap the image in a div with a spacer
     if (percent) {
         html = (
-            <>
-                <div className={className ? 'img-percent ' + className : 'img-percent'}>
-                    <div className="spacer" style={{
-                        'paddingTop': percent + '%'
-                    }}></div>
-                    {html}
-                </div>
-            </>
+            <div className={className ? 'img-percent ' + className : 'img-percent'}>
+                <div className="spacer" style={{
+                    'paddingTop': percent + '%'
+                }}></div>
+                {html}
+            </div>
         )
     }
 

@@ -19,15 +19,14 @@ const Intro = () => {
 
     useEffect(loadingAnimation, [])
 
-    const html = (<>
-            <div className="intro">
-                <Img src={logo} alt="Nick Sneed Logo"/>
-                <h1 style={{opacity: 0, transition: 'opacity 1s linear 0.5s'}}>Hello &amp; <br />welcome.</h1>
-                <Suspense>
-                    <Stars />
-                </Suspense>
-            </div>
-        </>
+    const html = (
+        <div className="intro">
+            <Img src={logo} alt="Nick Sneed Logo"/>
+            <h1 style={{opacity: 0, transition: 'opacity 1s linear 0.5s'}}>Hello &amp; <br />welcome.</h1>
+            <Suspense>
+                <Stars />
+            </Suspense>
+        </div>
     )
     return html;
 }

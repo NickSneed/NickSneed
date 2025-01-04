@@ -125,9 +125,7 @@ const Stars = () => {
     }, []);
 
     const html = (
-        <>
-            <div className="stars-3d"></div>
-        </>
+        <div className="stars-3d"></div>
     )
     return html;
 }
