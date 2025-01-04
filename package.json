@@ -43,6 +43,7 @@
     "dependencies": {
         "react": "^19.0.0",
         "react-dom": "^19.0.0",
+        "react-lazy-load-image-component": "^1.6.3",
         "react-router-dom": "^7.1.1",
         "three": "^0.171.0"
     }

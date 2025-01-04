@@ -19,7 +19,7 @@ const scene = new Scene(),
 let x = 0,
     renderer;
 
-function render() {
+const render = () => {
     // Set camera position
     x = x + distance;
     camera.position.x = cameraDistance * Math.cos(x);
@@ -30,7 +30,7 @@ function render() {
     renderer.render(scene, camera);
 }
 
-function setupScene() {
+const setupScene = () => {
 
     // Create a renderer and add it to the DOM
     renderer = new WebGLRenderer({ antialias: true, alpha: true });
@@ -50,7 +50,7 @@ function setupScene() {
     scene.add(ambientLight);
 }
 
-function addElements() {
+const addElements = () => {
     let group = new Group(),
         i,
         material,
@@ -94,16 +94,26 @@ function addElements() {
     }
 }
 
-function adjustSize() {
+const adjustSize = () => {
     renderer.setSize(window.innerWidth, window.innerHeight);
     camera.aspect = window.innerWidth / window.innerHeight;
     camera.updateProjectionMatrix();
 }
 
-function initStars() {
+const addOpacityClass  = () => {
+    setTimeout(function() {
+        const element = document.querySelector('.stars-3d');
+        if (element) {
+            element.classList.add('show');
+        }
+    }, 10);
+}
+
+const initStars = () => {
     setupScene();
     addElements();
     render();
+    addOpacityClass()
 
     // Adjust size on resize
     window.addEventListener("resize", adjustSize);
@@ -112,13 +122,6 @@ function initStars() {
 function Stars() {
     useEffect(() => {
         initStars();
-
-        setTimeout(function() {
-            const element = document.querySelector('.stars-3d');
-            if (element) {
-                element.classList.add('show');
-            }
-        }, 10);
     }, []);
 
     const html = (
