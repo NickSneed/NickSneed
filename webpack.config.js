@@ -7,7 +7,7 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
 export default {
-    entry: './src/js/app.js',
+    entry: './src/js/App.js',
     mode: 'production',
     output: {
         filename: 'app.js',

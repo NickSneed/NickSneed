@@ -2,7 +2,7 @@
     "name": "nicksneed",
     "version": "1.0.0",
     "type": "module",
-    "main": "src/js/app.js",
+    "main": "src/js/App.js",
     "scripts": {
         "test": "stylelint src/scss && eslint src/js/",
         "build": "node build/clearConsole && rimraf dist/* --glob && npm run test && node --no-deprecation build/optimizeImages.js && webpack",
