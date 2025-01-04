@@ -5,7 +5,7 @@
     "main": "src/js/app.js",
     "scripts": {
         "test": "stylelint src/scss && eslint src/js/",
-        "build": "node build/clearConsole && rimraf dist/* --glob && npm run test && npm run sass && node --no-deprecation build/optimizeImages.js && webpack",
+        "build": "node build/clearConsole && rimraf dist/* --glob && npm run test && node --no-deprecation build/optimizeImages.js && webpack",
         "sass": "sass --no-source-map --style=compressed src/scss/:dist/css",
         "deploy": "node build/confirmDeploy.js",
         "start": "npm run build && webpack serve --mode development"

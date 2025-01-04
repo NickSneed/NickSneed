@@ -54,8 +54,7 @@ export default {
     plugins: [
         new CopyWebpackPlugin({
             patterns: [
-                { from: 'src/favicon.ico', to: 'favicon.ico' },
-                { from: 'src/img/comp/', to: 'img/comp/' }
+                { from: 'src/favicon.ico', to: 'favicon.ico' }
             ]
         }),
         new HtmlWebpackPlugin({

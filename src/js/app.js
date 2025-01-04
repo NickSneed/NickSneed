@@ -4,6 +4,7 @@ import ReactDOM from 'react-dom/client';
 import { HashRouter, Routes, Route } from "react-router-dom";
 import Layout from "./pages/Layout.js";
 import Home from "./pages/Home.js";
+import '../scss/styles.scss';
 
 export default function App() {
     return (
