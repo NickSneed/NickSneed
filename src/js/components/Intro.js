@@ -19,6 +19,7 @@ const Intro = () => {
 
     useEffect(loadingAnimation, [])
 
+    // Component HTML
     const html = (
         <div className="intro">
             <Img src={logo} alt="Nick Sneed Logo"/>
@@ -28,6 +29,7 @@ const Intro = () => {
             </Suspense>
         </div>
     )
+    
     return html;
 }
 

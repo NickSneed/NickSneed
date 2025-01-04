@@ -4,6 +4,8 @@ import PropTypes from 'prop-types';
 // SocialTile component
 const SocialTile = (props) => {
     const {img, title, text, link, alt, linkTxt} = props;
+
+    // Component HTML
     const html = (
         <>
             <Img src={img} alt={alt} className="wide-sm" percent={100} />
@@ -12,6 +14,7 @@ const SocialTile = (props) => {
             <a href={link} className="btn">{linkTxt}</a>
         </>
     )
+    
     return html;
 }
 

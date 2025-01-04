@@ -10,6 +10,8 @@ import headerGitHub from '../../img/comp/header-github.png';
 
 // Main component
 const Main = () => {
+
+    // Component HTML
     const html = (
         <div className="main">
             <div className="row align-vc">
@@ -54,6 +56,7 @@ const Main = () => {
             </div>
         </div>
     )
+    
     return html;
 }
 

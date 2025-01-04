@@ -20,6 +20,7 @@ let x = 0,
     renderer;
 
 const render = () => {
+
     // Set camera position
     x = x + distance;
     camera.position.x = cameraDistance * Math.cos(x);
@@ -31,6 +32,7 @@ const render = () => {
 }
 
 const setupScene = () => {
+
     // Create a renderer and add it to the DOM
     renderer = new WebGLRenderer({ antialias: true, alpha: true });
     renderer.shadowMap.enabled = true;
@@ -120,13 +122,13 @@ const initStars = () => {
 
 // Stars component
 const Stars = () => {
-    useEffect(() => {
-        initStars();
-    }, []);
+    useEffect(initStars, []);
 
+    // Component HTML
     const html = (
         <div className="stars-3d"></div>
     )
+
     return html;
 }
 

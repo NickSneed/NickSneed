@@ -10,6 +10,8 @@ import logoLinkedIn from '../../img/comp/logo-linkedin.png'
 
 // Footer component
 const Footer = () => {
+
+    // Component HTML
     const html = (
         <footer>
             <hr />
@@ -35,6 +37,7 @@ const Footer = () => {
             </div>
         </footer>
     )
+    
     return html;
 }
 
