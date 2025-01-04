@@ -5,7 +5,7 @@ function SocialTile(props) {
     const {img, title, text, link, alt} = props;
     const html = (
         <>
-            <Img src={img} alt={alt} className="wide-sm" useSpacer={true} />
+            <Img src={img} alt={alt} className="wide-sm" percent={100} />
             <h2>{title}</h2>
             <p>{text}</p>
             <a href={link} className="btn">Shoot</a>

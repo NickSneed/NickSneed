@@ -13,19 +13,19 @@ function Footer() {
                 <div className="content">
                     <div className="social">
                         <a href="https://www.instagram.com/bobrumbly/">
-                            <Img src={logoInsta} alt="Visit my Instagram" />
+                            <Img src={logoInsta} alt="Visit my Instagram" height={30} />
                         </a>
                         <a href="https://bobrumbly.com">
-                            <Img src={logoTumblr} alt="Visit my Tumblr" />
+                            <Img src={logoTumblr} alt="Visit my Tumblr" height={30} />
                         </a>
                         <a href="https://github.com/NickSneed/">
-                            <Img src={logoGitHub} alt="Visit my GitHub" />
+                            <Img src={logoGitHub} alt="Visit my GitHub" height={30} />
                         </a>
                         <a href="https://x.com/BobRumbly">
-                            <Img src={logoX} alt="Visit my X/Twitter" />
+                            <Img src={logoX} alt="Visit my X/Twitter" height={30} />
                         </a>
                         <a href="https://www.linkedin.com/in/nsneed/">
-                            <Img src={logoLinkedIn} alt="Visit my LinkedIn" />
+                            <Img src={logoLinkedIn} alt="Visit my LinkedIn" height={30} />
                         </a>
                     </div>
                     <div className="copy">

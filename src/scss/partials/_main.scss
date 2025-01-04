@@ -1,13 +1,21 @@
 @use 'mediaqueries.scss' as m;
 
-#root {
-    opacity: 1 !important;
-}
-
 .main {
     padding: 40px 40px 0;
 
     @include m.for-large {  
         padding: 20px 60px 0;
+    }
+
+    .img-percent {
+        max-width: 150px;
+
+        @include m.for-medium { 
+            max-width: none;
+        }
+
+        &.wide-sm {
+            max-width: 150px;
+        }
     }
 }

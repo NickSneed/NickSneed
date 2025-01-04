@@ -11,7 +11,7 @@ function Main() {
             <div className="main">
                 <div className="row align-vc">
                     <div className="col-1 no-padding-sm">
-                        <Img src={familyImg} alt="My family" useSpacer={true} />
+                        <Img src={familyImg} alt="My family" percent={100} />
                     </div>
                     <div className="col-2">
                         <p className="txt-l">I&apos;m Nick Sneed, a web developer/designer based in O&apos; Fallon, MO. I specialize in creating beautiful responsive websites. I combine my love for design and technology to create online experiences that are both visually stunning and user-friendly.</p>
