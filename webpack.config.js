@@ -68,7 +68,6 @@ export default {
     devServer: {
         port: 3000,
         open: false,
-        compress: true,
         static: { 
             directory: path.join(__dirname, './dist/'),
             publicPath: '/'
