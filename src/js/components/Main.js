@@ -25,6 +25,7 @@ function Main() {
                             text="Reliving childhood memories, one pixel at a time on my Instagram. Exploring the world through the limited palette of the Game" 
                             link="https://www.instagram.com/bobrumbly/"
                             alt="Game Boy Camera"
+                            linkTxt="Shoot"
                         />
                     </div>
                     <div className="col-1">
@@ -34,6 +35,7 @@ function Main() {
                             text="Tumblr is my digital sketchbook! I love creating art inspired by my favorite video games. View my latest creations!"
                             link="https://bobrumbly.com"
                             alt="Tumblr"
+                            linkTxt="View"
                         />
                     </div>
                     <div className="col-1">
@@ -43,6 +45,7 @@ function Main() {
                             text="Browse my GitHub! I love coding and exploring new technologies. This is where I share my experiments and creations."
                             link="https://github.com/NickSneed/"
                             alt="GitHub"
+                            linkTxt="Play"
                         />
                     </div>
                 </div>
