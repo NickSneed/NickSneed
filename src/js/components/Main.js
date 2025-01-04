@@ -1,4 +1,4 @@
-import { LazyLoadImage } from 'react-lazy-load-image-component';
+import Img from './Img.js';
 import familyImg from '../../img/comp/family.png'
 import headerInsta from '../../img/comp/header-insta.png'
 import headerTumblr from '../../img/comp/header-tumblr.png'
@@ -11,7 +11,7 @@ function Main() {
             <div className="main">
                 <div className="row align-vc">
                     <div className="col-1 no-padding-sm">
-                        <LazyLoadImage src={familyImg} alt="My family" />
+                        <Img src={familyImg} alt="My family" useSpacer={true} />
                     </div>
                     <div className="col-2">
                         <p className="txt-l">I&apos;m Nick Sneed, a web developer/designer based in O&apos; Fallon, MO. I specialize in creating beautiful responsive websites. I combine my love for design and technology to create online experiences that are both visually stunning and user-friendly.</p>

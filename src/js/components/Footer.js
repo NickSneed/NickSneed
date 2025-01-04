@@ -1,4 +1,4 @@
-import { LazyLoadImage } from 'react-lazy-load-image-component';
+import Img from './Img.js';
 import logoInsta from '../../img/svg/logo-instagram.svg'
 import logoTumblr from '../../img/comp/logo-tumblr.png'
 import logoGitHub from '../../img/comp/logo-github.png'
@@ -13,19 +13,19 @@ function Footer() {
                 <div className="content">
                     <div className="social">
                         <a href="https://www.instagram.com/bobrumbly/">
-                            <LazyLoadImage src={logoInsta} alt="Visit my Instagram" />
+                            <Img src={logoInsta} alt="Visit my Instagram" />
                         </a>
                         <a href="https://bobrumbly.com">
-                            <LazyLoadImage src={logoTumblr} alt="Visit my Tumblr" />
+                            <Img src={logoTumblr} alt="Visit my Tumblr" />
                         </a>
                         <a href="https://github.com/NickSneed/">
-                            <LazyLoadImage src={logoGitHub} alt="Visit my GitHub" />
+                            <Img src={logoGitHub} alt="Visit my GitHub" />
                         </a>
                         <a href="https://x.com/BobRumbly">
-                            <LazyLoadImage src={logoX} alt="Visit my X/Twitter" />
+                            <Img src={logoX} alt="Visit my X/Twitter" />
                         </a>
                         <a href="https://www.linkedin.com/in/nsneed/">
-                            <LazyLoadImage src={logoLinkedIn} alt="Visit my LinkedIn" />
+                            <Img src={logoLinkedIn} alt="Visit my LinkedIn" />
                         </a>
                     </div>
                     <div className="copy">

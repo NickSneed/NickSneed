@@ -1,11 +1,11 @@
-import { LazyLoadImage } from 'react-lazy-load-image-component';
+import Img from './Img.js';
 import PropTypes from 'prop-types';
 
 function SocialTile(props) {
     const {img, title, text, link, alt} = props;
     const html = (
         <>
-            <LazyLoadImage src={img} alt={alt} className="wide-sm" />
+            <Img src={img} alt={alt} className="wide-sm" useSpacer={true} />
             <h2>{title}</h2>
             <p>{text}</p>
             <a href={link} className="btn">Shoot</a>

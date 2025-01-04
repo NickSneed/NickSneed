@@ -57,21 +57,36 @@ p.txt-l {
     }
 }
 
-.row {
-    margin: 0 0 4em;
+.img-wrapper {
+    max-width: 150px;
+    position: relative;
+    width: 100%;
+
+    @include m.for-medium { 
+        max-width: none;
+    }
+
+    &.wide-sm {
+        max-width: 150px;
+    }
+
+    .spacer {
+        padding-top: 100%;
+        height: 0;
+        width: 100%;
+    }
 
     img {
-        max-width: 150px;
+        display: block;
+        left: 0;
+        position: absolute;
+        top: 0;
         width: 100%;
-
-        @include m.for-medium { 
-            max-width: none;
-        }
-
-        &.wide-sm {
-            max-width: 150px;
-        }
     }
+}
+
+.row {
+    margin: 0 0 4em;
 
     .col-1,
     .col-2,
