@@ -1,3 +1,5 @@
+import str from '../utils/strings.js';
+
 // Copy component
 const Copy = () => {
 
@@ -7,7 +9,7 @@ const Copy = () => {
     // Component HTML
     const html = (
         <div className="copy">
-            <p>&copy; 2024-{year} Nick Sneed</p>
+            <p>{str('copy', true, [year])}</p>
         </div>
     )
 

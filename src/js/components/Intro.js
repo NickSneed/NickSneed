@@ -1,5 +1,6 @@
 import { lazy, Suspense, useEffect } from 'react';
 import Img from './Img.js';
+import str from '../utils/strings.js';
 
 // Import images
 import logo from '../../img/svg/ns-logo.svg';
@@ -22,8 +23,10 @@ const Intro = () => {
     // Component HTML
     const html = (
         <div className="intro">
-            <Img src={logo} alt="Nick Sneed Logo"/>
-            <h1 style={{opacity: 0, transition: 'opacity 1s linear 0.5s'}}>Hello &amp; <br />welcome.</h1>
+            <Img src={logo} alt={str('introLogoAlt')}/>
+            <h1 style={{opacity: 0, transition: 'opacity 1s linear 0.5s'}}>
+                {str('introTxt', true)}
+            </h1>
             <Suspense>
                 <Stars />
             </Suspense>

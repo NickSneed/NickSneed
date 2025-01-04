@@ -1,5 +1,6 @@
 import Img from './Img.js';
 import Copy from './Copy.js';
+import str from '../utils/strings.js';
 
 // Import images
 import logoInsta from '../../img/svg/logo-instagram.svg'
@@ -18,19 +19,19 @@ const Footer = () => {
             <div className="content">
                 <div className="social">
                     <a href="https://www.instagram.com/bobrumbly/">
-                        <Img src={logoInsta} alt="Visit my Instagram" />
+                        <Img src={logoInsta} alt={str('footerInstaAlt')} />
                     </a>
                     <a href="https://bobrumbly.com">
-                        <Img src={logoTumblr} alt="Visit my Tumblr" />
+                        <Img src={logoTumblr} alt={str('footerTumblrAlt')} />
                     </a>
                     <a href="https://github.com/NickSneed/">
-                        <Img src={logoGitHub} alt="Visit my GitHub" />
+                        <Img src={logoGitHub} alt={str('footerGitHubAlt')} />
                     </a>
                     <a href="https://x.com/BobRumbly">
-                        <Img src={logoX} alt="Visit my X/Twitter" />
+                        <Img src={logoX} alt={str('footerXAlt')} />
                     </a>
                     <a href="https://www.linkedin.com/in/nsneed/">
-                        <Img src={logoLinkedIn} alt="Visit my LinkedIn" />
+                        <Img src={logoLinkedIn} alt={str('footerLinkedInAlt')} />
                     </a>
                 </div>
                 <Copy />

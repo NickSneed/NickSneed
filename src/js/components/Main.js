@@ -1,5 +1,6 @@
 import Img from './Img.js';
 import SocialTile from './SocialTile.js';
+import str from '../utils/strings.js';
 
 // Import images
 import familyImg from '../../img/comp/family.png';
@@ -19,38 +20,38 @@ const Main = () => {
                     <Img src={familyImg} srcSmall={familyImgSmall} alt="My family" percent={100} />
                 </div>
                 <div className="col-2">
-                    <p className="txt-l">I&apos;m Nick Sneed, a web developer/designer based in O&apos; Fallon, MO. I specialize in creating beautiful responsive websites. I combine my love for design and technology to create online experiences that are both visually stunning and user-friendly.</p>
+                    <p className="txt-l">{str('mainIntro')}</p>
                 </div>
             </div>
             <div className="row">
                 <div className="col-1">
                     <SocialTile 
                         img={headerInsta} 
-                        title="Instagram" 
-                        text="Reliving childhood memories, one pixel at a time on my Instagram. Exploring the world through the limited palette of the Game" 
+                        title={str('socialTileInstaAlt')}
+                        text={str('socialTileInsta')}
                         link="https://www.instagram.com/bobrumbly/"
-                        alt="Game Boy Camera"
-                        linkTxt="Shoot"
+                        alt={str('socialTileInstaAlt')}
+                        linkTxt={str('socialTileInstaBt')}
                     />
                 </div>
                 <div className="col-1">
                     <SocialTile
                         img={headerTumblr}
-                        title="Tumblr"
-                        text="Tumblr is my digital sketchbook! I love creating art inspired by my favorite video games. View my latest creations!"
+                        title={str('socialTileTumblrAlt')}
+                        text={str('socialTileTumblr')}
                         link="https://bobrumbly.com"
-                        alt="Tumblr"
-                        linkTxt="View"
+                        alt={str('socialTileTumblrAlt')}
+                        linkTxt={str('socialTileTumblrBt')}
                     />
                 </div>
                 <div className="col-1">
                     <SocialTile
                         img={headerGitHub}
-                        title="GitHub"
-                        text="Browse my GitHub! I love coding and exploring new technologies. This is where I share my experiments and creations."
+                        title={str('socialTileGitHubAlt')}
+                        text={str('socialTileGitHub')}
                         link="https://github.com/NickSneed/"
-                        alt="GitHub"
-                        linkTxt="Play"
+                        alt={str('socialTileGitHubAlt')}
+                        linkTxt={str('socialTileGitHubBt')}
                     />
                 </div>
             </div>
