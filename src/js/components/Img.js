@@ -9,7 +9,7 @@ const loadingAnimation = (e) => {
 
 function Img(props) {
 
-    const { src, alt, className, percent, width, height } = props;
+    const { src, srcSmall, alt, className, percent, width, height } = props;
     const style = {
         opacity: 0,
         transition: 'opacity 1s linear 0s'
@@ -30,6 +30,17 @@ function Img(props) {
         </>
     )
 
+    if (srcSmall) {
+        html = (
+            <>
+                <picture>
+                    <source srcSet={srcSmall} media="(max-width: 959px)" />
+                    {html}
+                </picture>
+            </>
+        )
+    }
+
     if (percent) {
         html = (
             <>
@@ -48,6 +59,7 @@ function Img(props) {
 
 Img.propTypes = {
     src: PropTypes.string.isRequired,
+    srcSmall: PropTypes.string.notRequired,
     alt: PropTypes.string.isRequired,
     className: PropTypes.string.notRequired,
     percent: PropTypes.string.notRequired,

@@ -1,9 +1,10 @@
 import Img from './Img.js';
-import familyImg from '../../img/comp/family.png'
-import headerInsta from '../../img/comp/header-insta.png'
-import headerTumblr from '../../img/comp/header-tumblr.png'
-import headerGitHub from '../../img/comp/header-github.png'
-import SocialTile from './SocialTile.js'
+import familyImg from '../../img/comp/family.png';
+import familyImgSmall from '../../img/comp/family-small.png';
+import headerInsta from '../../img/comp/header-insta.png';
+import headerTumblr from '../../img/comp/header-tumblr.png';
+import headerGitHub from '../../img/comp/header-github.png';
+import SocialTile from './SocialTile.js';
 
 function Main() {
     const html = (
@@ -11,7 +12,7 @@ function Main() {
             <div className="main">
                 <div className="row align-vc">
                     <div className="col-1 no-padding-sm">
-                        <Img src={familyImg} alt="My family" percent={100} />
+                        <Img src={familyImg} srcSmall={familyImgSmall} alt="My family" percent={100} />
                     </div>
                     <div className="col-2">
                         <p className="txt-l">I&apos;m Nick Sneed, a web developer/designer based in O&apos; Fallon, MO. I specialize in creating beautiful responsive websites. I combine my love for design and technology to create online experiences that are both visually stunning and user-friendly.</p>
