@@ -19,28 +19,14 @@ const strings = {
     footerGitHubAlt: "Visit my GitHub",
     footerXAlt: "Visit my X/Twitter",
     footerLinkedInAlt: "Visit my LinkedIn",
-    copy: "&copy; 2024-{0} Nick Sneed"
-}
-
-// Replace variables ex: {0}
-const replaceVariables = (s, v) => {
-    const regex = /\{(\d+)\}/g;
-    const matches = s.match(regex);
-
-    if (matches) {
-        for (let m = 0; m < matches.length; m++) {
-            s = s.replace(matches[m], v[m]);
-        }
-    }
-
-    return s;
+    copy: ([year]) => `© 2024-${year} Nick Sneed`
 }
 
 // str function
 const str = (k, isParse, v) => {    
-    let s = replaceVariables(strings[k], v);
-    s = isParse ? parse(s) : s;
-    return s;
+    const string = strings[k];
+    const s = typeof string === 'function' ? string(v) : string;
+    return isParse ? parse(s) : s;
 }
 
 export default str;
