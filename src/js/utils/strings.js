@@ -19,8 +19,8 @@ const strings = {
         </p>
         <p>
             Specialization:<br>
-            Creation of visually appealing and responsive websites.<br>
-            Combination of design principles and technological expertise.<br>
+            Creation of visually appealing and responsive websites. 
+            Combination of design principles and technological expertise. 
             Development of user-centric online experiences.
         </p>`,
     socialTileInsta: 
