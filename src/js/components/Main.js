@@ -20,7 +20,7 @@ const Main = () => {
                     <Img src={familyImg} srcSmall={familyImgSmall} alt="My family" percent={100} />
                 </div>
                 <div className="col-2">
-                    <p className="txt-l">{str('mainIntro')}</p>
+                    {str('mainIntro', true)}
                 </div>
             </div>
             <div className="row">
@@ -28,7 +28,7 @@ const Main = () => {
                     <SocialTile 
                         img={headerInsta} 
                         title={str('socialTileInstaAlt')}
-                        text={str('socialTileInsta')}
+                        text={str('socialTileInsta', true)}
                         link="https://www.instagram.com/bobrumbly/"
                         alt={str('socialTileInstaAlt')}
                         linkTxt={str('socialTileInstaBt')}
@@ -38,7 +38,7 @@ const Main = () => {
                     <SocialTile
                         img={headerTumblr}
                         title={str('socialTileTumblrAlt')}
-                        text={str('socialTileTumblr')}
+                        text={str('socialTileTumblr', true)}
                         link="https://bobrumbly.com"
                         alt={str('socialTileTumblrAlt')}
                         linkTxt={str('socialTileTumblrBt')}
@@ -48,7 +48,7 @@ const Main = () => {
                     <SocialTile
                         img={headerGitHub}
                         title={str('socialTileGitHubAlt')}
-                        text={str('socialTileGitHub')}
+                        text={str('socialTileGitHub', true)}
                         link="https://github.com/NickSneed/"
                         alt={str('socialTileGitHubAlt')}
                         linkTxt={str('socialTileGitHubBt')}

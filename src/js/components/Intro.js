@@ -8,15 +8,25 @@ import logo from '../../img/svg/ns-logo.svg';
 // Lazy load the Stars component
 const Stars = lazy(() => import('./Stars.js'));
 
+// Generate a ramdom numer
+const generateUserID = () => {
+    const min = 10000000; // Minimum 8-digit number
+    const max = 99999999; // Maximum 8-digit number
+  
+    return Math.floor(Math.random() * (max - min + 1)) + min;
+}
+
 // Loading animation
 const loadingAnimation = () => {
     setTimeout(function () {
-        document.querySelector('.intro h1').style.opacity = 1;
+        document.querySelector('.intro-txt').style.opacity = 1;
     }, 50);
 }
 
 // Intro component
 const Intro = () => {
+
+    const userID = generateUserID();
 
     useEffect(loadingAnimation, [])
 
@@ -24,9 +34,12 @@ const Intro = () => {
     const html = (
         <div className="intro">
             <Img src={logo} alt={str('introLogoAlt')}/>
-            <h1 style={{opacity: 0, transition: 'opacity 1s linear 0.5s'}}>
-                {str('introTxt', true)}
-            </h1>
+            <div className="intro-txt" style={{opacity: 0, transition: 'opacity 1s linear 0.5s'}}>
+                <h1>
+                    {str('introH1')}
+                </h1>
+                <p>{str('introTxt', false, [userID])}</p>
+            </div>
             <Suspense>
                 <Stars />
             </Suspense>
