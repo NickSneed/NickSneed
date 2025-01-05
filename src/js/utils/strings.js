@@ -83,7 +83,15 @@ const strings = {
     footerGitHubAlt: `Visit my GitHub`,
     footerXAlt: `Visit my X/Twitter`,
     footerLinkedInAlt: `Visit my LinkedIn`,
-    copy: ([year]) => `© 2024-${year} Nick Sneed`
+    copy: ([year]) => `© 2024-${year} Nick Sneed`,
+    rocketHeader: `Upcoming Rocket Launch`,
+    rocketTxt: ([name, provider, vehicle, desc]) => 
+        `Name: ${name}<br>
+        Provider: ${provider}<br>
+        Vehicle: ${vehicle}<br><br>
+        ${desc}`,
+    loading: `Loading...`,
+    error: `Error: `
 }
 
 // str function

@@ -1,5 +1,6 @@
 import Img from './Img.js';
 import SocialTile from './SocialTile.js';
+import SpaceLaunches from './SpaceLauches.js';
 import str from '../utils/strings.js';
 
 // Import images
@@ -57,6 +58,11 @@ const Main = () => {
                         alt={str('socialTileGitHubAlt')}
                         linkTxt={str('socialTileGitHubBt')}
                     />
+                </div>
+            </div>
+            <div className="row">
+                <div className="col-1">
+                    <SpaceLaunches />
                 </div>
             </div>
         </div>
