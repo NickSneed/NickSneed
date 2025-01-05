@@ -9,7 +9,7 @@ const Copy = () => {
     // Component HTML
     const html = (
         <div className="copy">
-            <p>{str('copy', true, [year])}</p>
+            <p>{str('copy', false, [year])}</p>
         </div>
     )
 
