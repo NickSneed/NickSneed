@@ -32,20 +32,24 @@ footer {
         align-content: flex-start;
         
         a {
+            display: inline-block;
+            margin: 0 10px 0 0;
             text-decoration: none;
         }
 
         img,
         svg {
             height: 20px;
-            margin: 0 10px 0 0;
         }
 
         @include m.for-medium {  
+            a {
+                margin: 0 20px 0 0;
+            }
+
             img,
             svg {
                 height: 30px;
-                margin: 0 20px 0 0;
             }
         }
     }

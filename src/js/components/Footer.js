@@ -18,19 +18,19 @@ const Footer = () => {
             <hr />
             <div className="content">
                 <div className="social">
-                    <a href="https://www.instagram.com/bobrumbly/">
+                    <a href="https://www.instagram.com/bobrumbly/" target="_blank" rel="noopener noreferrer">
                         <Img src={logoInsta} alt={str('footerInstaAlt')} />
                     </a>
-                    <a href="https://bobrumbly.com">
+                    <a href="https://bobrumbly.com" target="_blank" rel="noopener noreferrer">
                         <Img src={logoTumblr} alt={str('footerTumblrAlt')} />
                     </a>
-                    <a href="https://github.com/NickSneed/">
+                    <a href="https://github.com/NickSneed/" target="_blank" rel="noopener noreferrer">
                         <Img src={logoGitHub} alt={str('footerGitHubAlt')} />
                     </a>
-                    <a href="https://x.com/BobRumbly">
+                    <a href="https://x.com/BobRumbly" target="_blank" rel="noopener noreferrer">
                         <Img src={logoX} alt={str('footerXAlt')} />
                     </a>
-                    <a href="https://www.linkedin.com/in/nsneed/">
+                    <a href="https://www.linkedin.com/in/nsneed/" target="_blank" rel="noopener noreferrer">
                         <Img src={logoLinkedIn} alt={str('footerLinkedInAlt')} />
                     </a>
                 </div>

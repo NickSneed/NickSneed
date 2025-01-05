@@ -11,7 +11,7 @@ const SocialTile = (props) => {
             <Img src={img} alt={alt} className="wide-sm" percent={100} />
             <h2>{title}</h2>
             <p>{text}</p>
-            <a href={link} className="btn">{linkTxt}</a>
+            <a href={link} className="btn" target="_blank" rel="noopener noreferrer">{linkTxt}</a>
         </>
     )
     
