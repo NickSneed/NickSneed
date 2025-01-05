@@ -1,20 +1,13 @@
 import { lazy, Suspense, useEffect } from 'react';
 import Img from './Img.js';
 import str from '../utils/strings.js';
+import { useUser } from '../context/UserContext.js';
 
 // Import images
 import logo from '../../img/svg/ns-logo.svg';
 
 // Lazy load the Stars component
 const Stars = lazy(() => import('./Stars.js'));
-
-// Generate a ramdom numer
-const generateUserID = () => {
-    const min = 10000000; // Minimum 8-digit number
-    const max = 99999999; // Maximum 8-digit number
-  
-    return Math.floor(Math.random() * (max - min + 1)) + min;
-}
 
 // Loading animation
 const loadingAnimation = () => {
@@ -26,7 +19,7 @@ const loadingAnimation = () => {
 // Intro component
 const Intro = () => {
 
-    const userID = generateUserID();
+    const { userID } = useUser();
 
     useEffect(loadingAnimation, [])
 

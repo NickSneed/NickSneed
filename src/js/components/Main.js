@@ -9,8 +9,12 @@ import headerInsta from '../../img/comp/header-insta.png';
 import headerTumblr from '../../img/comp/header-tumblr.png';
 import headerGitHub from '../../img/comp/header-github.png';
 
+import { useUser } from '../context/UserContext.js';
+
 // Main component
 const Main = () => {
+
+    const { userID } = useUser();
 
     // Component HTML
     const html = (
@@ -28,7 +32,7 @@ const Main = () => {
                     <SocialTile 
                         img={headerInsta} 
                         title={str('socialTileInstaAlt')}
-                        text={str('socialTileInsta', true)}
+                        text={str('socialTileInsta', true, [userID])}
                         link="https://www.instagram.com/bobrumbly/"
                         alt={str('socialTileInstaAlt')}
                         linkTxt={str('socialTileInstaBt')}
@@ -38,7 +42,7 @@ const Main = () => {
                     <SocialTile
                         img={headerTumblr}
                         title={str('socialTileTumblrAlt')}
-                        text={str('socialTileTumblr', true)}
+                        text={str('socialTileTumblr', true, [userID])}
                         link="https://bobrumbly.com"
                         alt={str('socialTileTumblrAlt')}
                         linkTxt={str('socialTileTumblrBt')}
@@ -48,7 +52,7 @@ const Main = () => {
                     <SocialTile
                         img={headerGitHub}
                         title={str('socialTileGitHubAlt')}
-                        text={str('socialTileGitHub', true)}
+                        text={str('socialTileGitHub', true, [userID])}
                         link="https://github.com/NickSneed/"
                         alt={str('socialTileGitHubAlt')}
                         linkTxt={str('socialTileGitHubBt')}

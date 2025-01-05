@@ -3,7 +3,7 @@ import parse from 'html-react-parser';
 // Strings object
 const strings = {
     introH1: `Hello`,
-    introTxt: ([userID]) => `Welcome to my website User${userID}.`,
+    introTxt: ([userID]) => `Welcome to my website. You have been randomly assigned user ID: ${userID}.`,
     introLogoAlt: `Nick Sneed Logo`,
     mainIntro:
         `<p>
@@ -23,7 +23,7 @@ const strings = {
             Combination of design principles and technological expertise. 
             Development of user-centric online experiences.
         </p>`,
-    socialTileInsta: 
+    socialTileInsta: ([userID]) => 
         `<p>
             Objective: <br>
             Nostalgia induction via digital media platform 'Instagram'.
@@ -35,10 +35,13 @@ const strings = {
         <p>
             Data presentation: <br>
             Limited color spectrum mirroring aesthetic of Game Boy Camera.
+        </p>
+        <p>
+            Please enjoy this nostalgic media ${userID}.
         </p>`,
     socialTileInstaAlt: `Instagram`,
     socialTileInstaBt: `Shoot`,
-    socialTileTumblr: 
+    socialTileTumblr: ([userID]) => 
         `<p>
             Objective:<br>
             Digital art portfolio.
@@ -51,10 +54,13 @@ const strings = {
         <p>
             Data source: <br>
             Retro digital video games.
+        </p>
+        <p>
+            Please enjoy this content ${userID}.
         </p>`,
     socialTileTumblrAlt: `Tumblr`,
     socialTileTumblrBt: `View`,
-    socialTileGitHub: 
+    socialTileGitHub: ([userID]) => 
         `<p>
             Purpose:<br>
             Code repository.
@@ -66,6 +72,9 @@ const strings = {
             Source code.
             Project documentation.
             Experimental prototypes.
+        </p>
+        <p>
+            Please enjoy these computational directives ${userID}.
         </p>`,
     socialTileGitHubAlt: `GitHub`,
     socialTileGitHubBt: `Play`,

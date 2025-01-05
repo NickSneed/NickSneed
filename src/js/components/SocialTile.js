@@ -3,7 +3,14 @@ import PropTypes from 'prop-types';
 
 // SocialTile component
 const SocialTile = (props) => {
-    const {img, title, text, link, alt, linkTxt} = props;
+    const {
+        img, 
+        title, 
+        text, 
+        link, 
+        alt, 
+        linkTxt
+    } = props;
 
     // Component HTML
     const html = (

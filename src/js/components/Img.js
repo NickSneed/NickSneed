@@ -11,7 +11,15 @@ const loadingAnimation = (e) => {
 // Img component
 const Img = (props) => {
 
-    const { src, srcSmall, alt, className, percent, width, height } = props;
+    const {
+        src, 
+        srcSmall, 
+        alt, 
+        className, 
+        percent, 
+        width, 
+        height 
+    } = props;
     const style = {
         opacity: 0,
         transition: 'opacity 1s linear 0s'
