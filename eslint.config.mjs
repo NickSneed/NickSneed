@@ -7,8 +7,7 @@ export default [
     { 
         languageOptions: { 
             globals: {
-                ...globals.browser,
-                Tumblr: "readonly"
+                ...globals.browser
             },
             parserOptions: {
                 ecmaVersion: 2021,
