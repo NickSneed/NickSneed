@@ -51,7 +51,6 @@
 
         p {
             max-width: 400px;
-            text-shadow: 0 0 5px c.$black;
 
             @include m.for-large {  
                 max-width: 500px;
