@@ -2,72 +2,50 @@
 @use 'colors.scss' as c;
 
 .intro {
-    background: c.$darkblue url('../img/comp/back.jpg') no-repeat left center;
+    background: c.$darkblue url('../img/comp/back.jpg') no-repeat 45% 50%;
     background-size: cover;
-    min-height: 400px;
+    height: 100vh;
+    min-height: 600px;
     overflow: hidden;
     position: relative;
     width: 100%;
 
     @include m.for-medium {  
-        min-height: 500px;
-        height: 100vh;
-    }
-
-    @include m.for-large {  
-        min-height: 850px;
-        height: 100vh;
-    }
-
-    img {
-        height: 120px;
-        left: 35px;
-        position: absolute;
-        top: 35px;
-        z-index: 2;
-
-        @include m.for-medium {  
-            height: 200px;
-        }
-
-        @include m.for-large {  
-            height: 300px;
-            left: 60px;
-            top: 60px;
-        }
+        background-position: 50%;
     }
 
     .intro-txt {
-        bottom: 40px;
-        left: 40px;
         position: absolute;
-        width: 80%;
-        z-index: 2;
+        text-align: center;
+        width: 100%;
+        z-index: 2;top: 50%; left: 50%;
+        transform: translate(-50%,-50%);
 
-        @include m.for-large {  
-            left: 60px;
-            bottom: 60px;
+        img {
+            min-width: 10em;
+            width: 14vw;
+
+            @include m.for-medium {  
+                width: 16em;
+            }
         }
 
         p {
-            max-width: 400px;
+            font-size: 1.8em;
+            margin: 0 auto 3vh;
 
-            @include m.for-large {  
-                max-width: 500px;
+            @include m.for-medium {  
+                font-size: 3em;
             }
         }
 
         h1 {
-            font-size: 60px;
+            font-size: 20vw;
             line-height: 0.8em;
-            margin: 0;
-    
+            margin: 30px 0;
+
             @include m.for-medium {  
-                font-size: 100px;
-            }
-        
-            @include m.for-large {  
-                font-size: 200px;
+                font-size: 20em;
             }
         }
     }

@@ -26,8 +26,8 @@ const Intro = () => {
     // Component HTML
     const html = (
         <div className="intro">
-            <Img src={logo} alt={str('introLogoAlt')}/>
             <div className="intro-txt" style={{opacity: 0, transition: 'opacity 1s linear 0.5s'}}>
+                <Img src={logo} alt={str('introLogoAlt')}/>
                 <h1>
                     {str('introH1')}
                 </h1>

@@ -3,7 +3,7 @@ import parse from 'html-react-parser';
 // Strings object
 const strings = {
     introH1: `Hello.`,
-    introTxt: ([userID]) => `Welcome to my website. You have been randomly assigned user ID: ${userID}.`,
+    introTxt: ([userID]) => parse(`Welcome to my website. <br>You have been randomly assigned <br>user ID: ${userID}.`),
     introLogoAlt: `Nick Sneed Logo`,
     mainIntro:
         `<p>

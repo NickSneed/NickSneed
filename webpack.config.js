@@ -69,6 +69,9 @@ export default {
     devServer: {
         port: 3000,
         open: false,
+        allowedHosts: [
+            'nickpc'
+        ],
         static: { 
             directory: path.join(__dirname, './dist/'),
             publicPath: '/'
