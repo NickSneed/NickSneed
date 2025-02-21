@@ -15,7 +15,6 @@ const Footer = () => {
     // Component HTML
     const html = (
         <footer>
-            <hr />
             <div className="content">
                 <div className="social">
                     <a href="https://www.instagram.com/bobrumbly/" target="_blank" rel="noopener noreferrer">
