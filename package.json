@@ -1,0 +1,52 @@
+{
+    "name": "nicksneed",
+    "version": "1.0.0",
+    "type": "module",
+    "main": "src/js/App.js",
+    "scripts": {
+        "test": "stylelint src/scss && eslint src/js/",
+        "build": "node build/clearConsole && rimraf dist/* --glob && npm run test && node --no-deprecation build/optimizeImages.js && webpack",
+        "sass": "sass --no-source-map --style=compressed src/scss/:dist/css",
+        "deploy": "node build/confirmDeploy.js",
+        "start": "npm run build && webpack serve --mode development"
+    },
+    "keywords": [],
+    "author": "",
+    "license": "ISC",
+    "description": "",
+    "devDependencies": {
+        "@babel/core": "^7.26.0",
+        "@babel/preset-env": "^7.26.0",
+        "@babel/preset-react": "^7.26.3",
+        "babel-loader": "^9.2.1",
+        "console-clear": "^1.1.1",
+        "copy-webpack-plugin": "^12.0.2",
+        "css-loader": "^7.1.2",
+        "dotenv": "^16.4.7",
+        "eslint": "^9.17.0",
+        "eslint-plugin-react": "^7.37.3",
+        "file-loader": "^6.2.0",
+        "gh-pages": "^6.2.0",
+        "globals": "^15.14.0",
+        "html-webpack-plugin": "^5.6.3",
+        "rimraf": "^6.0.1",
+        "sass": "^1.83.0",
+        "sass-loader": "^16.0.4",
+        "style-loader": "^4.0.0",
+        "stylelint": "^16.12.0",
+        "stylelint-config-standard": "^36.0.1",
+        "stylelint-scss": "^6.10.0",
+        "tinify": "^1.7.1",
+        "webpack": "^5.97.1",
+        "webpack-cli": "^6.0.1",
+        "webpack-dev-server": "^5.2.0"
+    },
+    "dependencies": {
+        "html-react-parser": "^5.2.2",
+        "react": "^19.0.0",
+        "react-dom": "^19.0.0",
+        "react-lazy-load-image-component": "^1.6.3",
+        "react-router-dom": "^7.1.1",
+        "three": "^0.171.0"
+    }
+}
