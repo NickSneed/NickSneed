@@ -8,6 +8,9 @@
     <meta name="description" content="Nick Sneed is a web developer and designer based in St. Louis, MO. He specializes in creating beautiful, responsive websites that are easy to use.">
     <meta name="keywords" content="Developer, Designer, HTML, CSS, JavaScript">
     <meta name="author" content="Nick Sneed">
+    <link rel="canonical" href="https://www.nicksneed.com" />
+    <link rel="manifest" href="/manifest.json">
+    <link rel="apple-touch-icon" href="/pwa-icon.png">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
@@ -23,6 +26,19 @@
 
 <body>
     <div id="root"></div>
+    <script>
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', () => {
+                navigator.serviceWorker.register('/sw.js')
+                    .then(registration => {
+                        console.log('ServiceWorker registration successful');
+                    })
+                    .catch(err => {
+                        console.log('ServiceWorker registration failed: ', err);
+                    });
+            });
+        }
+    </script>
 </body>
 
 </html>

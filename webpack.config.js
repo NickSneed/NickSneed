@@ -55,7 +55,10 @@ export default {
         new CopyWebpackPlugin({
             patterns: [
                 { from: 'src/favicon.ico', to: 'favicon.ico' },
-                { from: 'src/404.html', to: '404.html' }
+                { from: 'src/404.html', to: '404.html' },
+                { from: 'src/manifest.json', to: 'manifest.json' },
+                { from: 'src/pwa-icon.png', to: 'pwa-icon.png' },
+                { from: 'src/sw.js', to: 'sw.js' }
             ]
         }),
         new HtmlWebpackPlugin({
