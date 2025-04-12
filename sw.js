@@ -1,0 +1,1 @@
+var GHPATH="/",APP_PREFIX="nspwa_",VERSION="version_00",URLS=[`${GHPATH}`,`${GHPATH}index.html`,`${GHPATH}app.js`];
