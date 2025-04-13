@@ -1,12 +1,12 @@
 {
-    "name": "Nick Sneed PWA",
-    "short_name": "NS PWA",
+    "name": "Nick Sneed",
+    "short_name": "NS",
     "description": "Nick Sneed as a Progressive Web App",
     "scope": "/",
     "start_url": "/",
-    "background_color": "#ffffff",
-    "theme_color": "#ffffff",
-    "display": "standalone", 
+    "background_color": "#000000",
+    "theme_color": "#000000",
+    "display": "fullscreen", 
     "icons": [
         {
           "src": "/pwa-icon.png",
