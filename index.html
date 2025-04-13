@@ -3,4 +3,14 @@
         }
         #root {
             opacity: 0; transition: opacity 1s;
-        }</style><script defer="defer" src="app.js"></script></head><body><div id="root"></div></body></html>
+        }</style><script defer="defer" src="app.js"></script></head><body><div id="root"></div><script>if ('serviceWorker' in navigator) {
+            const getRidOfAllServiceWorkers = async () => {
+            const registry = await navigator.serviceWorker.getRegistrations()
+            for (const entry of registry) {
+                entry.unregister()
+            }
+            }
+
+            getRidOfAllServiceWorkers();
+    
+        }</script></body></html>
