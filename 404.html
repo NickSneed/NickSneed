@@ -5,6 +5,20 @@
 </head>
 <body>
 
+    <script>
+        if ('serviceWorker' in navigator) {
+            const getRidOfAllServiceWorkers = async () => {
+            const registry = await navigator.serviceWorker.getRegistrations()
+            for (const entry of registry) {
+                entry.unregister()
+            }
+            }
+
+            getRidOfAllServiceWorkers();
+    
+        }
+    </script>
+    
 <script>
     window.location.replace('/');
 </script>
