@@ -6,7 +6,6 @@ import { useUser } from '../context/UserContext.js';
 // Import Chakra UI components
 import { 
     Box,
-    Center,
     Heading,
     Text,
     AbsoluteCenter

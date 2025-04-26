@@ -5,7 +5,9 @@ import str from '../utils/strings.js';
 
 // Import Chakra UI components
 import { 
-    Box
+    Box,
+    Grid,
+    GridItem
 } from '@chakra-ui/react'
 
 // Import images
@@ -25,16 +27,14 @@ const Main = () => {
     // Component HTML
     const html = (
         <Box bg="#000" color="#fff" p="5">
-            <div className="row align-vc">
-                <div className="col-1 no-padding-sm">
+            <Grid templateColumns='repeat(3, 1fr)'>
+                <GridItem>
                     <Img src={familyImg} srcSmall={familyImgSmall} alt="My family" percent={100} />
-                </div>
-                <div className="col-2">
+                </GridItem>
+                <GridItem colSpan={2}>
                     {str('mainIntro', true)}
-                </div>
-            </div>
-            <div className="row">
-                <div className="col-1">
+                </GridItem>
+                <GridItem>
                     <SocialTile 
                         img={headerInsta} 
                         title={str('socialTileInstaAlt')}
@@ -43,8 +43,8 @@ const Main = () => {
                         alt={str('socialTileInstaAlt')}
                         linkTxt={str('socialTileInstaBt')}
                     />
-                </div>
-                <div className="col-1">
+                </GridItem>
+                <GridItem>
                     <SocialTile
                         img={headerTumblr}
                         title={str('socialTileTumblrAlt')}
@@ -53,8 +53,8 @@ const Main = () => {
                         alt={str('socialTileTumblrAlt')}
                         linkTxt={str('socialTileTumblrBt')}
                     />
-                </div>
-                <div className="col-1">
+                </GridItem>
+                <GridItem>
                     <SocialTile
                         img={headerGitHub}
                         title={str('socialTileGitHubAlt')}
@@ -63,17 +63,16 @@ const Main = () => {
                         alt={str('socialTileGitHubAlt')}
                         linkTxt={str('socialTileGitHubBt')}
                     />
-                </div>
-            </div>
-            <hr />
-            <div className="row">
-                <div className="col-1">
+                </GridItem>
+                <GridItem colSpan={3}>
+                    <hr />
                     <SpaceLaunches />
-                </div>
-            </div>
+                </GridItem>
+
+            </Grid>
         </Box>
     )
-    
+
     return html;
 }
 
