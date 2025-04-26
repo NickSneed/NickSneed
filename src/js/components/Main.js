@@ -2,6 +2,7 @@ import Img from './Img.js';
 import SocialTile from './SocialTile.js';
 import SpaceLaunches from './SpaceLauches.js';
 import str from '../utils/strings.js';
+import { useUser } from '../context/UserContext.js';
 
 // Import Chakra UI components
 import { 
@@ -16,8 +17,6 @@ import familyImgSmall from '../../img/comp/family-small.png';
 import headerInsta from '../../img/comp/header-insta.png';
 import headerTumblr from '../../img/comp/header-tumblr.png';
 import headerGitHub from '../../img/comp/header-github.png';
-
-import { useUser } from '../context/UserContext.js';
 
 // Main component
 const Main = () => {
