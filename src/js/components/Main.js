@@ -5,7 +5,7 @@ import str from '../utils/strings.js';
 import { useUser } from '../context/UserContext.js';
 
 // Import Chakra UI components
-import { 
+import {
     Box,
     Grid,
     GridItem
@@ -26,7 +26,7 @@ const Main = () => {
     // Component HTML
     const html = (
         <Box bg="#000" color="#fff" p="5">
-            <Grid templateColumns='repeat(3, 1fr)'>
+            <Grid templateColumns='repeat(3, 1fr)' alignItems="center" gap="8">
                 <GridItem>
                     <Img src={familyImg} srcSmall={familyImgSmall} alt="My family" percent={100} />
                 </GridItem>
@@ -67,7 +67,6 @@ const Main = () => {
                     <hr />
                     <SpaceLaunches />
                 </GridItem>
-
             </Grid>
         </Box>
     )
