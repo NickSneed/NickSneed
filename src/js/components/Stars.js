@@ -11,6 +11,11 @@ import {
     Mesh
 } from 'three';
 
+// Import Chakra UI components
+import { 
+    Box
+} from '@chakra-ui/react'
+
 const scene = new Scene(),
     camera = new PerspectiveCamera(50, window.innerWidth / window.innerHeight, 0.1, 10000),
     distance = 0.001,
@@ -105,7 +110,7 @@ const addOpacityClass  = () => {
     setTimeout(function() {
         const element = document.querySelector('.stars-3d');
         if (element) {
-            element.classList.add('show');
+            element.style.opacity = '1'; 
         }
     }, 10);
 }
@@ -126,7 +131,16 @@ const Stars = () => {
 
     // Component HTML
     const html = (
-        <div className="stars-3d"></div>
+        <Box 
+            className="stars-3d" 
+            position="absolute" 
+            zIndex="0" 
+            top="0" 
+            w="100%"
+            filter="blur(1px)"
+            opacity="0"
+            transition="opacity 1s"
+        ></Box>
     )
 
     return html;

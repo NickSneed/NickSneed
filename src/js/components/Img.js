@@ -1,6 +1,11 @@
 import { LazyLoadImage } from 'react-lazy-load-image-component';
 import PropTypes from 'prop-types';
 
+// Import Chakra UI components
+import { 
+    Box
+} from '@chakra-ui/react'
+
 // Function to animate the loading of an image
 const loadingAnimation = (e) => {
     setTimeout(function () {
@@ -17,22 +22,30 @@ const Img = (props) => {
         alt, 
         className, 
         percent, 
-        width, 
-        height 
+        width = 'auto', 
+        height = 'auto',
+        display = 'block',
+        maxWidth = 'none'
     } = props;
-    const style = {
-        opacity: 0,
-        transition: 'opacity 1s linear 0s'
-    }
 
     // Base HTML for an image
     let html = (
         <LazyLoadImage
-            style={style}
+            style={{
+                display: percent ? 'block' : display,
+                height: percent ? '100%' : height,
+                width: percent ? '100%' : width,
+                opacity: 0,
+                transition: 'opacity 1s linear 0s',
+                maxWidth: maxWidth,
+                margin: '0 auto',
+                position: percent ? 'absolute' : 'static',
+                left: percent ? '0' : 'auto',
+                top: percent ? '0' : 'auto',
+                objectFit: percent ? 'contain' : 'cover'
+            }}
             src={src}
             alt={alt}
-            width={width}
-            height={height}
             className={className}
             onLoad={function (e) {
                 loadingAnimation(e)
@@ -52,12 +65,17 @@ const Img = (props) => {
     // If a percentage is provided, wrap the image in a div with a spacer
     if (percent) {
         html = (
-            <div className={className ? 'img-percent ' + className : 'img-percent'}>
-                <div className="spacer" style={{
-                    'paddingTop': percent + '%'
-                }}></div>
+            <Box style={{
+                position: 'relative',
+                width: '100%'
+            }}>
+                <Box style={{
+                    'paddingTop': percent + '%',
+                    height: 0,
+                    width: '100%'
+                }}></Box>
                 {html}
-            </div>
+            </Box>
         )
     }
 
@@ -72,7 +90,9 @@ Img.propTypes = {
     className: PropTypes.string.notRequired,
     percent: PropTypes.string.notRequired,
     width: PropTypes.string.notRequired,
-    height: PropTypes.string.notRequired
+    height: PropTypes.string.notRequired,
+    display: PropTypes.string.notRequired,
+    maxWidth: PropTypes.string.notRequired
 };
 
 export default Img;

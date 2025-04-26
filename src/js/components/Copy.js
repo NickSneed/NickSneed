@@ -1,5 +1,11 @@
 import str from '../utils/strings.js';
 
+// Import Chakra UI components
+import { 
+    Flex, 
+    Text 
+} from '@chakra-ui/react'
+
 // Copy component
 const Copy = () => {
 
@@ -8,9 +14,9 @@ const Copy = () => {
 
     // Component HTML
     const html = (
-        <div className="copy">
-            <p>{str('copy', false, [year])}</p>
-        </div>
+        <Flex direction="direction" align="flex-end">
+            <Text fontSize='md' color="#fff">{str('copy', false, [year])}</Text>
+        </Flex>
     )
 
     return html;

@@ -3,6 +3,11 @@ import SocialTile from './SocialTile.js';
 import SpaceLaunches from './SpaceLauches.js';
 import str from '../utils/strings.js';
 
+// Import Chakra UI components
+import { 
+    Box
+} from '@chakra-ui/react'
+
 // Import images
 import familyImg from '../../img/comp/family.png';
 import familyImgSmall from '../../img/comp/family-small.png';
@@ -19,7 +24,7 @@ const Main = () => {
 
     // Component HTML
     const html = (
-        <div className="main">
+        <Box bg="#000" color="#fff" p="5">
             <div className="row align-vc">
                 <div className="col-1 no-padding-sm">
                     <Img src={familyImg} srcSmall={familyImgSmall} alt="My family" percent={100} />
@@ -66,7 +71,7 @@ const Main = () => {
                     <SpaceLaunches />
                 </div>
             </div>
-        </div>
+        </Box>
     )
     
     return html;

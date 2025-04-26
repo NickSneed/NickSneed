@@ -9,32 +9,41 @@ import logoGitHub from '../../img/comp/logo-github.png'
 import logoX from '../../img/svg/logo-x.svg'
 import logoLinkedIn from '../../img/comp/logo-linkedin.png'
 
+// Import Chakra UI components
+import { 
+    Box, 
+    Flex, 
+    Link 
+} from '@chakra-ui/react'
+
 // Footer component
 const Footer = () => {
 
     // Component HTML
     const html = (
         <footer>
-            <div className="content">
-                <div className="social">
-                    <a href="https://www.instagram.com/bobrumbly/" target="_blank" rel="noopener noreferrer">
-                        <Img src={logoInsta} alt={str('footerInstaAlt')} />
-                    </a>
-                    <a href="https://bobrumbly.com" target="_blank" rel="noopener noreferrer">
-                        <Img src={logoTumblr} alt={str('footerTumblrAlt')} />
-                    </a>
-                    <a href="https://github.com/NickSneed/" target="_blank" rel="noopener noreferrer">
-                        <Img src={logoGitHub} alt={str('footerGitHubAlt')} />
-                    </a>
-                    <a href="https://x.com/BobRumbly" target="_blank" rel="noopener noreferrer">
-                        <Img src={logoX} alt={str('footerXAlt')} />
-                    </a>
-                    <a href="https://www.linkedin.com/in/nsneed/" target="_blank" rel="noopener noreferrer">
-                        <Img src={logoLinkedIn} alt={str('footerLinkedInAlt')} />
-                    </a>
-                </div>
-                <Copy />
-            </div>
+            <Box p="5" bg="#111">
+                <Flex direction={{base: 'column', md: 'row'}} align="center" justify="space-between">
+                    <Flex align="flex-start">
+                        <Link href="https://www.instagram.com/bobrumbly/" target="_blank" rel="noopener noreferrer" mr="2" h="20px">
+                            <Img src={logoInsta} alt={str('footerInstaAlt')} display="inline-block" height="20px" />
+                        </Link>
+                        <Link href="https://bobrumbly.com" target="_blank" rel="noopener noreferrer" mr="2" h="20px">
+                            <Img src={logoTumblr} alt={str('footerTumblrAlt')} display="inline-block" height="20px" />
+                        </Link>
+                        <Link href="https://github.com/NickSneed/" target="_blank" rel="noopener noreferrer" mr="2" h="20px">
+                            <Img src={logoGitHub} alt={str('footerGitHubAlt')} display="inline-block" height="20px" />
+                        </Link>
+                        <Link href="https://x.com/BobRumbly" target="_blank" rel="noopener noreferrer" mr="2" h="20px">
+                            <Img src={logoX} alt={str('footerXAlt')} display="inline-block" height="20px" />
+                        </Link>
+                        <Link href="https://www.linkedin.com/in/nsneed/" target="_blank" rel="noopener noreferrer" mr="2" h="20px">
+                            <Img src={logoLinkedIn} alt={str('footerLinkedInAlt')} display="inline-block" height="20px" />
+                        </Link>
+                    </Flex>
+                    <Copy />
+                </Flex>
+            </Box>
         </footer>
     )
     
