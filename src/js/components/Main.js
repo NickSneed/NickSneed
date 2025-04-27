@@ -28,7 +28,7 @@ const Main = () => {
 
     // Component HTML
     const html = (
-        <Box bg="#000" color="#fff" p="10">
+        <Box bg="#000" color="#fff" p="10" pb="20">
             <Grid 
                 templateColumns={{
                     base: '1fr', 
