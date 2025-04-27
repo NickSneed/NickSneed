@@ -32,16 +32,16 @@ const theme = extendTheme({
             },
             variants: {
                 solid: {
-                    bg: 'red.600',
+                    bg: 'blue.600',
                     color: 'white',
                     _hover: {
-                        bg: 'red.500'
+                        bg: 'blue.500'
                     }
                 },
                 outline: {
                     border: '2px solid',
-                    borderColor: 'red.500',
-                    color: 'red.500'
+                    borderColor: 'blue.500',
+                    color: 'blue.500'
                 }
             },
             defaultProps: {
