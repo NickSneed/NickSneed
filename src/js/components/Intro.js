@@ -44,6 +44,7 @@ const Intro = () => {
             bgPosition="center"
             bgRepeat="no-repeat"
             bgSize="cover"
+            minHeight="600px"
         >
             <AbsoluteCenter 
                 axis="vertical"
@@ -55,11 +56,13 @@ const Intro = () => {
                 width="100%"
                 style={{opacity: 0, transition: 'opacity 1s linear 0.5s'}}
             >
-                <Img src={logo} alt={str('introLogoAlt')} width="10%" display="block"/>
-                <Heading as="h1" size="4xl" mb="4" fontWeight="semibold">
+                <Box width={{base: '100px', md: '150px'}}>
+                    <Img src={logo} alt={str('introLogoAlt')} width="100%" display="block"/>
+                </Box>
+                <Heading as="h1" fontSize={{base: '25vw', md: '200px'}} mb="2" fontWeight="semibold">
                     {str('introH1')}
                 </Heading>
-                <Text>{str('introTxt', false, [userID])}</Text>
+                <Text fontSize={{base: 'lg', md: '3xl'}}>{str('introTxt', false, [userID])}</Text>
             </AbsoluteCenter>
             <Suspense>
                 <Stars />

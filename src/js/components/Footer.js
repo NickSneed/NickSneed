@@ -22,23 +22,52 @@ const Footer = () => {
     // Component HTML
     const html = (
         <footer>
-            <Box p="5" bg="#111">
-                <Flex direction={{base: 'column', md: 'row'}} align="center" justify="space-between">
-                    <Flex align="flex-start">
-                        <Link href="https://www.instagram.com/bobrumbly/" target="_blank" rel="noopener noreferrer" mr="2" h="20px">
-                            <Img src={logoInsta} alt={str('footerInstaAlt')} display="inline-block" height="20px" />
+            <Box p={{base: 7, md: 10}} bg="#111">
+                <Flex 
+                    direction={{base: 'column', md: 'row'}} 
+                    align="center" 
+                    justify="space-between"
+                >
+                    <Flex align="flex-start" mb={{base: '4', md: '0'}}>
+                        <Link href="https://www.instagram.com/bobrumbly/" 
+                            target="_blank" 
+                            rel="noopener noreferrer" 
+                            mr={{base: 2, md: 4}} 
+                            h={{ base: '20px', md: '30px' }}
+                        >
+                            <Img src={logoInsta} alt={str('footerInstaAlt')} display="inline-block" height="100%" />
                         </Link>
-                        <Link href="https://bobrumbly.com" target="_blank" rel="noopener noreferrer" mr="2" h="20px">
-                            <Img src={logoTumblr} alt={str('footerTumblrAlt')} display="inline-block" height="20px" />
+                        <Link href="https://bobrumbly.com" 
+                            target="_blank" 
+                            rel="noopener noreferrer" 
+                            mr={{base: 2, md: 4}} 
+                            h={{ base: '20px', md: '30px' }}
+                        >
+                            <Img src={logoTumblr} alt={str('footerTumblrAlt')} display="inline-block" height="100%" />
                         </Link>
-                        <Link href="https://github.com/NickSneed/" target="_blank" rel="noopener noreferrer" mr="2" h="20px">
-                            <Img src={logoGitHub} alt={str('footerGitHubAlt')} display="inline-block" height="20px" />
+                        <Link href="https://github.com/NickSneed/" 
+                            target="_blank" 
+                            rel="noopener noreferrer" 
+                            mr={{base: 2, md: 4}} 
+                            h={{ base: '20px', md: '30px' }}
+                        >
+                            <Img src={logoGitHub} alt={str('footerGitHubAlt')} display="inline-block" height="100%" />
                         </Link>
-                        <Link href="https://x.com/BobRumbly" target="_blank" rel="noopener noreferrer" mr="2" h="20px">
-                            <Img src={logoX} alt={str('footerXAlt')} display="inline-block" height="20px" />
+                        <Link href="https://x.com/BobRumbly" 
+                            target="_blank" 
+                            rel="noopener noreferrer" 
+                            mr={{base: 2, md: 4}} 
+                            h={{ base: '20px', md: '30px' }}
+                        >
+                            <Img src={logoX} alt={str('footerXAlt')} display="inline-block" height="100%" />
                         </Link>
-                        <Link href="https://www.linkedin.com/in/nsneed/" target="_blank" rel="noopener noreferrer" mr="2" h="20px">
-                            <Img src={logoLinkedIn} alt={str('footerLinkedInAlt')} display="inline-block" height="20px" />
+                        <Link href="https://www.linkedin.com/in/nsneed/" 
+                            target="_blank" 
+                            rel="noopener noreferrer" 
+                            mr={{base: 2, md: 4}} 
+                            h={{ base: '20px', md: '30px' }}
+                        >
+                            <Img src={logoLinkedIn} alt={str('footerLinkedInAlt')} display="inline-block" height="100%" />
                         </Link>
                     </Flex>
                     <Copy />

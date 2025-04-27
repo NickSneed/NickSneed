@@ -1,6 +1,13 @@
 import React, { useState, useEffect } from 'react';
 import str from '../utils/strings.js';
 
+// Import Chakra UI components
+import {
+    Box,
+    Heading,
+    Text
+} from '@chakra-ui/react'
+
 const apiUrl = 'https://fdo.rocketlaunch.live/json/launches/next/5';
 
 // SpaceLaunches component
@@ -42,14 +49,16 @@ const SpaceLaunches = () => {
     
     // Component HTML
     const html = (
-        <>
-            <h2>{str('rocketHeader')}</h2>
-            <p>
+        <Box pt="10">
+            <Heading as="h2" size="lg" fontWeight="semibold" mb="4">
+                {str('rocketHeader')}
+            </Heading>
+            <Text>
             {isLoading && <span>{str('loading')}</span>}
             {error && <span>{str('error')} {error.message}</span>}
             {data && str('rocketTxt', true, [name, provider, rocket, desc])}
-            </p>
-        </>
+            </Text>
+        </Box>
     )
 
     return html;

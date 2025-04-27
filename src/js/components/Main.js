@@ -7,8 +7,11 @@ import { useUser } from '../context/UserContext.js';
 // Import Chakra UI components
 import {
     Box,
+    Divider,
     Grid,
-    GridItem
+    GridItem,
+    Heading,
+    Text
 } from '@chakra-ui/react'
 
 // Import images
@@ -25,13 +28,28 @@ const Main = () => {
 
     // Component HTML
     const html = (
-        <Box bg="#000" color="#fff" p="5">
-            <Grid templateColumns='repeat(3, 1fr)' alignItems="center" gap="8">
+        <Box bg="#000" color="#fff" p="10">
+            <Grid 
+                templateColumns={{
+                    base: '1fr', 
+                    md: 'repeat(3, 1fr)'
+                }} 
+                alignItems="center" 
+                gap="10" 
+                maxW="1400px" 
+                mx="auto"
+            >
                 <GridItem>
-                    <Img src={familyImg} srcSmall={familyImgSmall} alt="My family" percent={100} />
+                    <Box maxW={{base: '150px', md: 'none'}}py="10">
+                        <Img src={familyImg} srcSmall={familyImgSmall} alt="My family" percent={100} />
+                    </Box>
                 </GridItem>
-                <GridItem colSpan={2}>
-                    {str('mainIntro', true)}
+                <GridItem colSpan={{base: 1, md: 2}} fontSize="xl">
+                    <Box py="10">
+                        <Heading as="h2" size="xl" mb="4" fontWeight="semibold">{str('mainIntro1', true)}</Heading>
+                        <Text mb="2">{str('mainIntro2', true)}</Text>
+                        <Text >{str('mainIntro3', true)}</Text>
+                    </Box>
                 </GridItem>
                 <GridItem>
                     <SocialTile 
@@ -63,8 +81,8 @@ const Main = () => {
                         linkTxt={str('socialTileGitHubBt')}
                     />
                 </GridItem>
-                <GridItem colSpan={3}>
-                    <hr />
+                <GridItem colSpan={{base: 1, md: 3}}>
+                    <Divider />
                     <SpaceLaunches />
                 </GridItem>
             </Grid>

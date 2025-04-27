@@ -5,23 +5,13 @@ const strings = {
     introH1: `Hello.`,
     introTxt: ([userID]) => parse(`Welcome to my website. <br>You have been randomly assigned <br>user ID: ${userID}.`),
     introLogoAlt: `Nick Sneed Logo`,
-    mainIntro:
-        `<p>
-            <span className="txt-l">
-                Nick Sneed <br>
-                Web Developer/Designer
-            </span>
-        </p>
-        <p>
-            <i>Location</i><br>
-            O' Fallon, MO
-        </p>
-        <p>
-            <i>Specialization</i><br>
-            Creation of visually appealing and responsive websites. 
-            Combination of design principles and technological expertise. 
-            Development of user-centric online experiences.
-        </p>`,
+    mainIntro1: `Nick Sneed <br>Web Developer/Designer`,
+    mainIntro2: `<i>Location</i><br>O' Fallon, MO`,
+    mainIntro3: 
+        `<i>Specialization</i><br>
+        Creation of visually appealing and responsive websites. 
+        Combination of design principles and technological expertise. 
+        Development of user-centric online experiences.`,
     socialTileInsta: ([userID]) => 
         `<p>
             <i>Objective</i><br>
