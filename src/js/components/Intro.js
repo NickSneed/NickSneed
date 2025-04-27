@@ -38,7 +38,6 @@ const Intro = () => {
             bg="#000"
             color="#fff"
             position="relative"
-            overflow="hidden"
             height="100vh"
             bgImage={`url(${backgroundImage})`}
             bgPosition="center"

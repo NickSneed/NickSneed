@@ -140,6 +140,10 @@ const Stars = () => {
             filter="blur(1px)"
             opacity="0"
             transition="opacity 1s"
+            sx={{canvas: {
+                width: '100% !important',
+                height: '100% !important'
+            }}}
         ></Box>
     )
 
