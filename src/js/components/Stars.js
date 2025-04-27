@@ -136,6 +136,7 @@ const Stars = () => {
             position="absolute" 
             zIndex="0" 
             top="0" 
+            h="100%"
             w="100%"
             filter="blur(1px)"
             opacity="0"
