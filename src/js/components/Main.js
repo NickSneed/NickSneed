@@ -40,13 +40,13 @@ const Main = () => {
                 mx="auto"
             >
                 <GridItem>
-                    <Box maxW={{base: '150px', md: 'none'}}py="10">
+                    <Box maxW={{base: '150px', md: 'none'}} py={{base: 0, md: 10}} pt="10">
                         <Img src={familyImg} srcSmall={familyImgSmall} alt="My family" percent={100} />
                     </Box>
                 </GridItem>
                 <GridItem colSpan={{base: 1, md: 2}} fontSize="xl">
-                    <Box py="10">
-                        <Heading as="h2" size="xl" mb="4" fontWeight="semibold">{str('mainIntro1', true)}</Heading>
+                    <Box py={{base: 0, md: 10}}>
+                        <Heading as="h2" size={{base: 'md', md: 'xl'}} mb="4" fontWeight="semibold">{str('mainIntro1', true)}</Heading>
                         <Text mb="2">{str('mainIntro2', true)}</Text>
                         <Text >{str('mainIntro3', true)}</Text>
                     </Box>
