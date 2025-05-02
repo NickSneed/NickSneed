@@ -64,7 +64,7 @@ const Footer = () => {
                         <Link href="https://www.linkedin.com/in/nsneed/" 
                             target="_blank" 
                             rel="noopener noreferrer" 
-                            mr={{base: 2, md: 4}} 
+                            mr="0" 
                             h={{ base: '20px', md: '30px' }}
                         >
                             <Img src={logoLinkedIn} alt={str('footerLinkedInAlt')} display="inline-block" height="100%" />
