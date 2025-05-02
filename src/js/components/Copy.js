@@ -3,7 +3,7 @@ import str from '@/js/utils/strings.js';
 // Import Chakra UI components
 import { 
     Flex, 
-    Text 
+    Text
 } from '@chakra-ui/react'
 
 // Copy component
