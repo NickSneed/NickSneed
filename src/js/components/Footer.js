@@ -1,13 +1,13 @@
-import Img from './Img.js';
-import Copy from './Copy.js';
-import str from '../utils/strings.js';
+import Img from '@/js/components/Img.js';
+import Copy from '@/js/components/Copy.js';
+import str from '@/js/utils/strings.js';
 
 // Import images
-import logoInsta from '../../img/svg/logo-instagram.svg'
-import logoTumblr from '../../img/comp/logo-tumblr.png'
-import logoGitHub from '../../img/comp/logo-github.png'
-import logoX from '../../img/svg/logo-x.svg'
-import logoLinkedIn from '../../img/comp/logo-linkedin.png'
+import logoInsta from '@/img/svg/logo-instagram.svg'
+import logoTumblr from '@/img/comp/logo-tumblr.png'
+import logoGitHub from '@/img/comp/logo-github.png'
+import logoX from '@/img/svg/logo-x.svg'
+import logoLinkedIn from '@/img/comp/logo-linkedin.png'
 
 // Import Chakra UI components
 import { 

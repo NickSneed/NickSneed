@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import str from '../utils/strings.js';
+import str from '@/js/utils/strings.js';
 
 // Import Chakra UI components
 import {

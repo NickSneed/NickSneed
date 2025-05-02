@@ -1,6 +1,6 @@
-import { UserProvider } from './../context/UserContext.js';
-import Intro from '../components/Intro.js';
-import Main from '../components/Main.js';
+import { UserProvider } from '@/js/context/UserContext.js';
+import Intro from '@/js/components/Intro.js';
+import Main from '@/js/components/Main.js';
 
 const Home = () => {
     const home = (

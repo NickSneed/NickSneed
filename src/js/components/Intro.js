@@ -1,7 +1,7 @@
 import { lazy, Suspense, useEffect } from 'react';
-import Img from './Img.js';
-import str from '../utils/strings.js';
-import { useUser } from '../context/UserContext.js';
+import Img from '@/js/components/Img.js';
+import str from '@/js/utils/strings.js';
+import { useUser } from '@/js/context/UserContext.js';
 
 // Import Chakra UI components
 import { 
@@ -12,11 +12,11 @@ import {
 } from '@chakra-ui/react'
 
 // Import images
-import logo from '../../img/svg/ns-logo.svg';
-import backgroundImage from '../../img/comp/back.jpg';
+import logo from '@/img/svg/ns-logo.svg';
+import backgroundImage from '@/img/comp/back.jpg';
 
 // Lazy load the Stars component
-const Stars = lazy(() => import('./Stars.js'));
+const Stars = lazy(() => import('@/js/components/Stars.js'));
 
 // Loading animation
 const loadingAnimation = () => {

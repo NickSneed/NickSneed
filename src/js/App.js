@@ -4,10 +4,10 @@ import ReactDOM from 'react-dom/client';
 import { ChakraProvider } from '@chakra-ui/react'
 
 import { HashRouter, Routes, Route } from "react-router-dom";
-import Layout from "./pages/Layout.js";
-import Home from "./pages/Home.js";
+import Layout from "@/js/pages/Layout.js";
+import Home from "@/js/pages/Home.js";
 
-import theme from './theme/theme.js';
+import theme from '@/js/theme/theme.js';
 
 export default function App() {
     return (

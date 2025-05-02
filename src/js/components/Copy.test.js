@@ -1,7 +1,7 @@
 /* global describe, test, expect */
 import { render, screen } from '@testing-library/react';
 import '@testing-library/jest-dom';
-import Copy from './Copy';
+import Copy from '@/js/components/Copy';
 
 describe('Copy Component', () => {
     test('renders copyright text with current year', () => {

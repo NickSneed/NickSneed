@@ -1,4 +1,4 @@
-import Img from './Img.js';
+import Img from '@/js/components/Img.js';
 import PropTypes from 'prop-types';
 
 // Import Chakra UI components

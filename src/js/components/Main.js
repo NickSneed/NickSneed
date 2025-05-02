@@ -1,8 +1,8 @@
-import Img from './Img.js';
-import SocialTile from './SocialTile.js';
-import SpaceLaunches from './SpaceLauches.js';
-import str from '../utils/strings.js';
-import { useUser } from '../context/UserContext.js';
+import Img from '@/js/components/Img.js';
+import SocialTile from '@/js/components/SocialTile.js';
+import SpaceLaunches from '@/js/components/SpaceLauches.js';
+import str from '@/js/utils/strings.js';
+import { useUser } from '@/js/context/UserContext.js';
 
 // Import Chakra UI components
 import {
@@ -15,11 +15,11 @@ import {
 } from '@chakra-ui/react'
 
 // Import images
-import familyImg from '../../img/comp/family.png';
-import familyImgSmall from '../../img/comp/family-small.png';
-import headerInsta from '../../img/comp/header-insta.png';
-import headerTumblr from '../../img/comp/header-tumblr.png';
-import headerGitHub from '../../img/comp/header-github.png';
+import familyImg from '@/img/comp/family.png';
+import familyImgSmall from '@/img/comp/family-small.png';
+import headerInsta from '@/img/comp/header-insta.png';
+import headerTumblr from '@/img/comp/header-tumblr.png';
+import headerGitHub from '@/img/comp/header-github.png';
 
 // Main component
 const Main = () => {

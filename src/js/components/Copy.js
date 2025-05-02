@@ -1,4 +1,4 @@
-import str from '../utils/strings.js';
+import str from '@/js/utils/strings.js';
 
 // Import Chakra UI components
 import { 
