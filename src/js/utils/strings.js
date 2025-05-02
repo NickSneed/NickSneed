@@ -5,7 +5,7 @@ const strings = {
     introH1: `Hello.`,
     introTxt: ([userID]) => parse(`Welcome to my website. <br>You have been randomly assigned <br>user ID: ${userID}.`),
     introLogoAlt: `Nick Sneed Logo`,
-    mainIntro1: `Nick Sneed <br>Web Dev/Designer`,
+    mainIntro1: `Nick Sneed <br>Web Developer/Designer`,
     mainIntro2: `<i>Location</i><br>O' Fallon, MO`,
     mainIntro3: 
         `<i>Specialization</i><br>
