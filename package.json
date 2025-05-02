@@ -5,7 +5,7 @@
     "main": "src/js/App.js",
     "scripts": {
         "test": "eslint src/js/ && jest",
-        "build": "node build/clearConsole && rimraf dist/* --glob && npm run test && node --no-deprecation build/optimizeImages.js && webpack",
+        "build": "node build/clearConsole && rimraf dist/* --glob && node --no-deprecation build/optimizeImages.js && webpack",
         "deploy": "node build/confirmDeploy.js",
         "start": "npm run build && webpack serve --mode development"
     },

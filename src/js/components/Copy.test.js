@@ -7,7 +7,7 @@ describe('Copy Component', () => {
     test('renders copyright text with current year', () => {
         render(<Copy />);
         const currentYear = new Date().getFullYear();
-        const copyrightText = screen.getByText(new RegExp(`© 2024-${currentYear}`));
+        const copyrightText = screen.getByText(new RegExp(`©2 2024-${currentYear}`));
         expect(copyrightText).toBeInTheDocument();
     });
 

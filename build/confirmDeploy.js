@@ -11,7 +11,7 @@ const rl = readline.createInterface({
 rl.question('Are you sure you want to deploy? (yes/no) ', (answer) => {
     if (answer.toLowerCase() === 'yes') {
         console.log('Deploying...');
-        exec('npm run build && gh-pages -d dist --cname nicksneed.com', (err, stdout, stderr) => {
+        exec('npm run test && npm run build && gh-pages -d dist --cname nicksneed.com', (err, stdout, stderr) => {
             if (err) {
                 console.error(`Error: ${err.message}`);
                 return;
