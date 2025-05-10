@@ -1,16 +1,10 @@
 /* global jest, describe, test, expect */
-/* eslint-disable react/prop-types */
 
 import { render, screen, within } from '@testing-library/react';
 import '@testing-library/jest-dom';
 import Footer from '@/js/components/Footer';
 
-// Add mock for Img component
-jest.mock('@/js/components/Img.js', () => {
-    return function MockImg({ src, alt, ...props }) {
-        return <img src={src} alt={alt} data-testid="mock-img" {...props} />
-    }
-});
+
 
 // Add mock for Copy component
 jest.mock('@/js/components/Copy.js', () => {

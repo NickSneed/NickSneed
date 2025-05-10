@@ -1,42 +1,29 @@
-/* global jest, global */
+/* global jest */
+/* eslint-disable react/prop-types */
+
 import '@testing-library/jest-dom';
 
 // Global mock for strings utility
-/*
 jest.mock('@/js/utils/strings.js', () => {
-    const mockStr = jest.fn().mockImplementation(() => 'mock string value');
-    global.mockStr = mockStr; // Make available globally
-    return mockStr;
+    return function(key, isParse, values) {
+        // Handle different string types
+        if (isParse) {
+            return `<parsed>${key}</parsed>`;
+        }
+        
+        // Handle function strings with values
+        if (values) {
+            return `mocked ${key} with ${values.join(',')}`;
+        }
+        
+        // Handle static strings
+        return `mocked ${key}`;
+    };
 });
-*/
 
-
-// Create mock implementation for str function
-const mockStr = jest.fn().mockImplementation((key, isParse, values) => {
-    // Handle different string types
-    if (isParse) {
-        return `<parsed>${key}</parsed>`;
+// Add mock for Img component
+jest.mock('@/js/components/Img.js', () => {
+    return function mockImg({ src, alt, ...props }) {
+        return <img src={src} alt={alt} data-testid="mock-img" {...props} />
     }
-    
-    // Handle function strings with values
-    if (values) {
-        return `mocked ${key} with ${values.join(',')}`;
-    }
-    
-    // Handle static strings
-    return `mocked ${key}`;
 });
-
-// Make mock globally available
-global.mockStr = mockStr;
-
-// Global mock for strings utility
-jest.mock('@/js/utils/strings.js', () => {
-    return mockStr;
-});
-
-// Mock html-react-parser
-jest.mock('html-react-parser', () => ({
-    __esModule: true,
-    default: (str) => `<parsed>${str}</parsed>`
-}));
