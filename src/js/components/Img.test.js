@@ -37,4 +37,17 @@ describe('Image Component', () => {
         const wrapper = document.querySelector('div > div');
         expect(wrapper).toHaveStyle({ position: 'relative', width: '100%' });
     });
+
+    test('matches snapshot', () => {
+        const { container } = render(
+            <Img 
+                src={mockProps.src} 
+                alt={mockProps.alt}
+                className={mockProps.className}
+                srcSmall="small-image.jpg"
+                percent={mockProps.percent}
+            />
+        );
+        expect(container).toMatchSnapshot();
+    });
 });
