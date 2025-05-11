@@ -1,7 +1,6 @@
-/* global describe, test, expect, jest */
+/* global describe, test, expect */
 import { render, screen } from '@testing-library/react';
 import '@testing-library/jest-dom';
-jest.unmock('@/js/components/Img.js');
 import Img from '@/js/components/Img';
 
 describe('Image Component', () => {

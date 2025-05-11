@@ -4,12 +4,9 @@ import { render, screen, within } from '@testing-library/react';
 import '@testing-library/jest-dom';
 import Footer from '@/js/components/Footer';
 
-// Add mock for Copy component
-jest.mock('@/js/components/Copy.js', () => {
-    return function MockCopy() {
-        return <div data-testid="copy-component">Mock Copy</div>
-    }
-});
+// Add mocks
+jest.mock('@/js/components/Copy.js');
+jest.mock('@/js/components/Img')
 
 // Mock the image imports
 jest.mock('@/img/svg/logo-instagram.svg', () => 'instagram.svg');

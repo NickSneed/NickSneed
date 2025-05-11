@@ -1,5 +1,4 @@
 /* global jest */
-/* eslint-disable react/prop-types */
 
 import '@testing-library/jest-dom';
 
@@ -19,11 +18,4 @@ jest.mock('@/js/utils/strings.js', () => {
         // Handle static strings
         return `mocked ${key}`;
     };
-});
-
-// Add mock for Img component
-jest.mock('@/js/components/Img.js', () => {
-    return function mockImg({ src, alt, ...props }) {
-        return <img src={src} alt={alt} data-testid="mock-img" {...props} />
-    }
 });
