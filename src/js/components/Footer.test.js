@@ -5,7 +5,7 @@ import '@testing-library/jest-dom';
 import Footer from '@/js/components/Footer';
 
 // Add mocks
-jest.mock('@/js/components/Copy.js');
+jest.mock('@/js/components/Copy');
 jest.mock('@/js/components/Img')
 
 // Mock the image imports
