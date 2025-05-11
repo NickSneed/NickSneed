@@ -4,8 +4,6 @@ import { render, screen, within } from '@testing-library/react';
 import '@testing-library/jest-dom';
 import Footer from '@/js/components/Footer';
 
-
-
 // Add mock for Copy component
 jest.mock('@/js/components/Copy.js', () => {
     return function MockCopy() {
