@@ -6,7 +6,12 @@ const UserContext = createContext();
 const generateUserID = () => {
     const min = 10000000;
     const max = 99999999;
-    const userID = 'U' + (Math.floor(Math.random() * (max - min + 1)) + min);
+    const range = max - min + 1;
+    const randomBuffer = new Uint32Array(1);
+    window.crypto.getRandomValues(randomBuffer);
+    const randomNumber = min + (randomBuffer[0] % range);
+    const userID = `U${randomNumber}`;
+
     return userID;
 };
 
