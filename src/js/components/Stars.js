@@ -112,7 +112,7 @@ const addOpacityClass  = () => {
         if (element) {
             element.style.opacity = '1'; 
         }
-    }, 10);
+    }, 500);
 }
 
 const initStars = () => {

@@ -14,6 +14,7 @@ import {
 // Import images
 import logo from '@/img/svg/ns-logo.svg';
 import backgroundImage from '@/img/comp/back.jpg';
+import backgroundOverlay from '@/img/comp/back-overlay.png';
 
 // Lazy load the Stars component
 const Stars = lazy(() => import('@/js/components/Stars.js'));
@@ -50,7 +51,7 @@ const Intro = () => {
                 className="intro-txt" 
                 align="center" 
                 p="5"
-                zIndex="1"
+                zIndex="2"
                 position="relative"
                 width="100%"
                 style={{opacity: 0, transition: 'opacity 1s linear 0.5s'}}
@@ -63,6 +64,22 @@ const Intro = () => {
                 </Heading>
                 <Text fontSize={{base: 'lg', md: '3xl'}}>{str('introTxt', false, [userID])}</Text>
             </AbsoluteCenter>
+            <Box
+                position="absolute"
+                top="0"
+                left="0"
+                width="100%"
+                height="100%"
+                zIndex="1"
+            >
+                <Img 
+                    src={backgroundOverlay}
+                    alt={str('introBackgroundAlt')}
+                    objectFit="cover"
+                    height="100%"
+                    width="100%"
+                />
+            </Box>
             <Suspense>
                 <Stars />
             </Suspense>
