@@ -1,19 +1,21 @@
-import parse from 'html-react-parser';
+import parse from "html-react-parser";
 
 // Strings object
 const strings = {
-    introH1: `Hello.`,
-    introTxt: ([userID]) => parse(`Welcome to my website. <br>You have been randomly assigned <br>user ID: ${userID}.`),
-    introLogoAlt: `Nick Sneed Logo`,
-    mainIntro1: `Nick Sneed <br>Web Developer/Designer`,
-    mainIntro2: `<i>Location</i><br>O' Fallon, MO`,
-    mainIntro3: 
-        `<i>Specialization</i><br>
+  introH1: `Hello.`,
+  introTxt: ([userID]) =>
+    parse(
+      `Welcome to my website. <br>You have been randomly assigned <br>user ID: ${userID}.`
+    ),
+  introLogoAlt: `Nick Sneed Logo`,
+  mainIntro1: `Nick Sneed <br>Web Developer/Designer`,
+  mainIntro2: `<i>Location</i><br>O' Fallon, MO`,
+  mainIntro3: `<i>Specialization</i><br>
         Creation of visually appealing and responsive websites. 
         Combination of design principles and technological expertise. 
         Development of user-centric online experiences.`,
-    socialTileInsta: ([userID]) => 
-        `<p>
+  socialTileInsta: ([userID]) =>
+    `<p>
             <i>Objective</i><br>
             Nostalgia induction via digital media platform 'Instagram'.
         </p>
@@ -28,10 +30,10 @@ const strings = {
         <p>
             Please enjoy this nostalgic media ${userID}.
         </p>`,
-    socialTileInstaAlt: `Instagram`,
-    socialTileInstaBt: `Shoot`,
-    socialTileTumblr: ([userID]) => 
-        `<p>
+  socialTileInstaAlt: `Funtography`,
+  socialTileInstaBt: `Shoot`,
+  socialTileTumblr: ([userID]) =>
+    `<p>
             <i>Objective</i><br>
             Digital art portfolio.
             Visual representation of aesthetic preferences derived from video game media.
@@ -47,10 +49,10 @@ const strings = {
         <p>
             Please enjoy this content ${userID}.
         </p>`,
-    socialTileTumblrAlt: `Tumblr`,
-    socialTileTumblrBt: `View`,
-    socialTileGitHub: ([userID]) => 
-        `<p>
+  socialTileTumblrAlt: `Art`,
+  socialTileTumblrBt: `View`,
+  socialTileGitHub: ([userID]) =>
+    `<p>
             <i>Purpose</i><br>
             Code repository.
             Documentation of software development activities.
@@ -65,29 +67,29 @@ const strings = {
         <p>
             Please enjoy these computational directives ${userID}.
         </p>`,
-    socialTileGitHubAlt: `GitHub`,
-    socialTileGitHubBt: `Play`,
-    footerInstaAlt: `Visit my Instagram`,
-    footerTumblrAlt: `Visit my Tumblr`,
-    footerGitHubAlt: `Visit my GitHub`,
-    footerXAlt: `Visit my X/Twitter`,
-    footerLinkedInAlt: `Visit my LinkedIn`,
-    copy: ([year]) => `© 2024-${year} Nick Sneed`,
-    rocketHeader: `Upcoming Rocket Launch`,
-    rocketTxt: ([name, provider, vehicle, desc]) => 
-        `Name: ${name}<br>
+  socialTileGitHubAlt: `Code`,
+  socialTileGitHubBt: `Play`,
+  footerInstaAlt: `Visit my Instagram`,
+  footerTumblrAlt: `Visit my Tumblr`,
+  footerGitHubAlt: `Visit my GitHub`,
+  footerXAlt: `Visit my X/Twitter`,
+  footerLinkedInAlt: `Visit my LinkedIn`,
+  copy: ([year]) => `© 2024-${year} Nick Sneed`,
+  rocketHeader: `Upcoming Rocket Launch`,
+  rocketTxt: ([name, provider, vehicle, desc]) =>
+    `Name: ${name}<br>
         Provider: ${provider}<br>
         Vehicle: ${vehicle}<br><br>
         ${desc}`,
-    loading: `Loading...`,
-    error: `Error: `
-}
+  loading: `Loading...`,
+  error: `Error: `,
+};
 
 // str function
 const str = (k, isParse, v) => {
-    const string = strings[k];
-    const s = typeof string === 'function' ? string(v) : string;
-    return isParse ? parse(s) : s;
-}
+  const string = strings[k];
+  const s = typeof string === "function" ? string(v) : string;
+  return isParse ? parse(s) : s;
+};
 
 export default str;
