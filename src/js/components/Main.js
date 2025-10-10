@@ -4,9 +4,6 @@ import SpaceLaunches from '@/js/components/SpaceLauches.js';
 import str from '@/js/utils/strings.js';
 import { useUser } from '@/js/context/UserContext.js';
 
-// Import Chakra UI components
-import { Grid, GridItem } from '@chakra-ui/react';
-
 // Import images
 import familyImg from '@/img/comp/family.png';
 import familyImgSmall from '@/img/comp/family-small.png';
@@ -23,71 +20,45 @@ const Main = () => {
     // Component HTML
     const html = (
         <div className={styles.main}>
-            <Grid
-                templateColumns={{
-                    base: '1fr',
-                    md: 'repeat(3, 1fr)'
-                }}
-                alignItems="start"
-                gap="10"
-                maxW="1400px"
-                mx="auto"
-            >
-                <GridItem>
-                    <div className={styles.mainimg}>
-                        <Img
-                            src={familyImg}
-                            srcSmall={familyImgSmall}
-                            alt="My family"
-                            percent={100}
-                        />
-                    </div>
-                </GridItem>
-                <GridItem
-                    colSpan={{ base: 1, md: 2 }}
-                    fontSize="xl"
-                >
-                    <div className={styles.maincopy}>
-                        <h2>{str('mainIntro1', true)}</h2>
-                        <p>{str('mainIntro2', true)}</p>
-                        <p>{str('mainIntro3', true)}</p>
-                    </div>
-                </GridItem>
-                <GridItem>
-                    <SocialTile
-                        img={headerInsta}
-                        title={str('socialTileInstaAlt')}
-                        text={str('socialTileInsta', true, [userID])}
-                        link="https://www.instagram.com/bobrumbly/"
-                        alt={str('socialTileInstaAlt')}
-                        linkTxt={str('socialTileInstaBt')}
-                    />
-                </GridItem>
-                <GridItem>
-                    <SocialTile
-                        img={headerTumblr}
-                        title={str('socialTileTumblrAlt')}
-                        text={str('socialTileTumblr', true, [userID])}
-                        link="https://bobrumbly.com"
-                        alt={str('socialTileTumblrAlt')}
-                        linkTxt={str('socialTileTumblrBt')}
-                    />
-                </GridItem>
-                <GridItem>
-                    <SocialTile
-                        img={headerGitHub}
-                        title={str('socialTileGitHubAlt')}
-                        text={str('socialTileGitHub', true, [userID])}
-                        link="https://github.com/NickSneed/"
-                        alt={str('socialTileGitHubAlt')}
-                        linkTxt={str('socialTileGitHubBt')}
-                    />
-                </GridItem>
-                <GridItem colSpan={{ base: 1, md: 3 }}>
-                    <hr />
-                    <SpaceLaunches />
-                </GridItem>
-            </Grid>
+            <div className={styles.mainimg}>
+                <Img
+                    src={familyImg}
+                    srcSmall={familyImgSmall}
+                    alt="My family"
+                    percent={100}
+                />
+            </div>
+            <div className={styles.maincopy}>
+                <h2>{str('mainIntro1', true)}</h2>
+                <p>{str('mainIntro2', true)}</p>
+                <p>{str('mainIntro3', true)}</p>
+            </div>
+            <SocialTile
+                img={headerInsta}
+                title={str('socialTileInstaAlt')}
+                text={str('socialTileInsta', true, [userID])}
+                link="https://www.instagram.com/bobrumbly/"
+                alt={str('socialTileInstaAlt')}
+                linkTxt={str('socialTileInstaBt')}
+            />
+            <SocialTile
+                img={headerTumblr}
+                title={str('socialTileTumblrAlt')}
+                text={str('socialTileTumblr', true, [userID])}
+                link="https://bobrumbly.com"
+                alt={str('socialTileTumblrAlt')}
+                linkTxt={str('socialTileTumblrBt')}
+            />
+            <SocialTile
+                img={headerGitHub}
+                title={str('socialTileGitHubAlt')}
+                text={str('socialTileGitHub', true, [userID])}
+                link="https://github.com/NickSneed/"
+                alt={str('socialTileGitHubAlt')}
+                linkTxt={str('socialTileGitHubBt')}
+            />
+            <hr />
+            <SpaceLaunches />
         </div>
     );
 

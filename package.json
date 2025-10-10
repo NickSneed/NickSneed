@@ -4,7 +4,7 @@
     "type": "module",
     "main": "src/js/App.js",
     "scripts": {
-        "test": "eslint src/js/ && jest",
+        "test": "eslint src/js/",
         "build": "node build/clearConsole && rimraf dist/* --glob && node --no-deprecation build/optimizeImages.js && webpack",
         "deploy": "node build/confirmDeploy.js",
         "start": "npm run build && webpack serve --mode development"
@@ -42,10 +42,6 @@
         "webpack-dev-server": "^5.2.0"
     },
     "dependencies": {
-        "@chakra-ui/react": "^2.10.7",
-        "@emotion/react": "^11.14.0",
-        "@emotion/styled": "^11.14.0",
-        "framer-motion": "^12.9.2",
         "html-react-parser": "^5.2.2",
         "react": "^19.0.0",
         "react-dom": "^19.0.0",

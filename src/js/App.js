@@ -1,8 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 
-import { ChakraProvider } from '@chakra-ui/react';
-
 import { HashRouter, Routes, Route } from 'react-router-dom';
 import Layout from '@/js/pages/Layout.js';
 import Home from '@/js/pages/Home.js';
@@ -12,25 +10,23 @@ import '@/styles/global.css';
 
 export default function App() {
     return (
-        <ChakraProvider>
-            <HashRouter>
-                <Routes>
+        <HashRouter>
+            <Routes>
+                <Route
+                    path="/"
+                    element={<Layout />}
+                >
                     <Route
-                        path="/"
-                        element={<Layout />}
-                    >
-                        <Route
-                            index
-                            element={<Home />}
-                        />
-                        <Route
-                            path="*"
-                            element={<Home />}
-                        />
-                    </Route>
-                </Routes>
-            </HashRouter>
-        </ChakraProvider>
+                        index
+                        element={<Home />}
+                    />
+                    <Route
+                        path="*"
+                        element={<Home />}
+                    />
+                </Route>
+            </Routes>
+        </HashRouter>
     );
 }
 
