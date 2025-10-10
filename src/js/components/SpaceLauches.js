@@ -1,12 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import str from '@/js/utils/strings.js';
 
-// Import Chakra UI components
-import {
-    Box,
-    Heading,
-    Text
-} from '@chakra-ui/react'
+import * as styles from './SpaceLaunches.module.css';
 
 const apiUrl = 'https://fdo.rocketlaunch.live/json/launches/next/5';
 
@@ -43,25 +38,27 @@ const SpaceLaunches = () => {
     if (data) {
         name = data.name ? data.name : '';
         provider = data.provider ? data.provider.name : '';
-        rocket = data.vehicle ? data.vehicle.name: '';
+        rocket = data.vehicle ? data.vehicle.name : '';
         desc = data.launch_description ? data.launch_description : '';
     }
-    
+
     // Component HTML
     const html = (
-        <Box pt="10">
-            <Heading as="h2" size="lg" fontWeight="semibold" mb="4">
-                {str('rocketHeader')}
-            </Heading>
-            <Text>
-            {isLoading && <span>{str('loading')}</span>}
-            {error && <span>{str('error')} {error.message}</span>}
-            {data && str('rocketTxt', true, [name, provider, rocket, desc])}
-            </Text>
-        </Box>
-    )
+        <div className={styles.spaceLaunches}>
+            <h2>{str('rocketHeader')}</h2>
+            <p>
+                {isLoading && <span>{str('loading')}</span>}
+                {error && (
+                    <span>
+                        {str('error')} {error.message}
+                    </span>
+                )}
+                {data && str('rocketTxt', true, [name, provider, rocket, desc])}
+            </p>
+        </div>
+    );
 
     return html;
-}
+};
 
 export default SpaceLaunches;

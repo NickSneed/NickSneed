@@ -1,44 +1,37 @@
 import Img from '@/js/components/Img.js';
 import PropTypes from 'prop-types';
-
-// Import Chakra UI components
-import {
-    Heading,
-    Button,
-    Box
-} from '@chakra-ui/react'
+import * as styles from './SocialTile.module.css';
 
 // SocialTile component
 const SocialTile = (props) => {
-    const {
-        img, 
-        title, 
-        text, 
-        link, 
-        alt, 
-        linkTxt
-    } = props;
+    const { img, title, text, link, alt, linkTxt } = props;
 
     // Component HTML
     const html = (
-        <Box py="4">
-            <Box maxW="150px" mb="6">
-                <Img src={img} alt={alt} className="wide-sm" percent={100}/>
-            </Box>
-            <Heading as="h2" size="lg" fontWeight="semibold" mb="4">
-                {title}
-            </Heading>
-            <Box mb="2" sx={{'p': {mb: '6'}}}>
-                {text}
-            </Box>
-            <Button as="a" href={link} target="_blank" rel="noopener noreferrer">
+        <div className={styles.socialTile}>
+            <div className={styles.img}>
+                <Img
+                    src={img}
+                    alt={alt}
+                    className="wide-sm"
+                    percent={100}
+                />
+            </div>
+            <h2>{title}</h2>
+            {text}
+            <a
+                href={link}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="btn"
+            >
                 {linkTxt}
-            </Button>
-        </Box>
-    )
-    
+            </a>
+        </div>
+    );
+
     return html;
-}
+};
 
 // Define the prop types for the component
 SocialTile.propTypes = {
@@ -51,6 +44,3 @@ SocialTile.propTypes = {
 };
 
 export default SocialTile;
-
-
-

@@ -1,7 +1,7 @@
-import path from "path";
+import path from 'path';
 import { fileURLToPath } from 'url';
 import HtmlWebpackPlugin from 'html-webpack-plugin';
-import CopyWebpackPlugin from "copy-webpack-plugin";
+import CopyWebpackPlugin from 'copy-webpack-plugin';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -11,11 +11,11 @@ export default {
     mode: 'production',
     output: {
         filename: 'app.js',
-        path: path.resolve(__dirname, 'dist'),
+        path: path.resolve(__dirname, 'dist')
     },
     resolve: {
         alias: {
-            '@': path.resolve(__dirname, 'src'),
+            '@': path.resolve(__dirname, 'src')
         }
     },
     module: {
@@ -27,10 +27,11 @@ export default {
                     loader: 'babel-loader',
                     options: {
                         presets: [
-                            "@babel/preset-env", [
-                                "@babel/preset-react",
+                            '@babel/preset-env',
+                            [
+                                '@babel/preset-react',
                                 {
-                                    "runtime": "automatic"
+                                    runtime: 'automatic'
                                 }
                             ]
                         ]
@@ -38,18 +39,32 @@ export default {
                 }
             },
             {
-                test: /\.s[ac]ss$/i,
+                test: /\.css$/,
+                exclude: /\.module\.css$/, // Exclude CSS Modules
+                use: ['style-loader', 'css-loader']
+            },
+            // Rule for CSS Modules
+            {
+                test: /\.module\.css$/, // Target files ending with .module.css
                 use: [
-                    "style-loader",
-                    "css-loader"
-                ],
+                    'style-loader',
+                    {
+                        loader: 'css-loader',
+                        options: {
+                            modules: {
+                                localIdentName: '[name]__[local]--[hash:base64:5]' // Customize generated class names
+                            },
+                            importLoaders: 1
+                        }
+                    }
+                ]
             },
             {
                 test: /\.(png|jpe?g|gif|svg)$/i,
                 issuer: /\.(js|mjs|cjs)$/,
                 use: [
                     {
-                        loader: 'file-loader',
+                        loader: 'file-loader'
                     }
                 ]
             }
@@ -75,10 +90,8 @@ export default {
     devServer: {
         port: 3000,
         open: false,
-        allowedHosts: [
-            'nickpc'
-        ],
-        static: { 
+        allowedHosts: ['nickpc'],
+        static: {
             directory: path.join(__dirname, './dist/'),
             publicPath: '/'
         }

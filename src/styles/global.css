@@ -1,0 +1,25 @@
+body {
+    color: #fff;
+    font-optical-sizing: 'auto';
+    font-family: Montserrat, serif;
+}
+
+h1,
+h2 {
+    font-weight: 600;
+    font-family: Montserrat, serif;
+}
+
+p {
+    color: #fff;
+    margin-bottom: 20px;
+    font-family: Montserrat, serif;
+}
+
+.btn {
+    background-color: #3c7aff;
+    display: inline-block;
+    padding: 10px 20px;
+    font-weight: 600;
+    border-radius: 10px 20px;
+}

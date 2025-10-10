@@ -1,0 +1,37 @@
+.footer {
+    background: #111;
+    padding: 20px;
+}
+
+.footer a {
+    height: 20px;
+    margin: 0 10px 0 0;
+}
+
+.footerContainer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: column;
+}
+
+.socialLinks {
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 1rem;
+}
+
+.socialLinks a {
+    display: inline-block;
+    height: 24px;
+    margin-right: 1rem;
+}
+
+@media (min-width: 48em) {
+    .footerContainer {
+        flex-direction: row;
+    }
+    .socialLinks {
+        margin-bottom: 0;
+    }
+}

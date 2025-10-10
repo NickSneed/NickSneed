@@ -1,28 +1,22 @@
 import { LazyLoadImage } from 'react-lazy-load-image-component';
 import PropTypes from 'prop-types';
 
-// Import Chakra UI components
-import { 
-    Box
-} from '@chakra-ui/react'
-
 // Function to animate the loading of an image
 const loadingAnimation = (e) => {
     setTimeout(function () {
         e.target.style.opacity = 1;
     }, 50);
-}
+};
 
 // Img component
 const Img = (props) => {
-
     const {
-        src, 
-        srcSmall, 
-        alt, 
-        className, 
-        percent, 
-        width = 'auto', 
+        src,
+        srcSmall,
+        alt,
+        className,
+        percent,
+        width = 'auto',
         height = 'auto',
         display = 'block',
         maxWidth = 'none'
@@ -48,39 +42,47 @@ const Img = (props) => {
             alt={alt}
             className={className}
             onLoad={function (e) {
-                loadingAnimation(e)
-            }} />
-    )
+                loadingAnimation(e);
+            }}
+        />
+    );
 
     // If a small image is provided, wrap the image in a picture element
     if (srcSmall) {
         html = (
             <picture>
-                <source srcSet={srcSmall} media="(max-width: 959px)" />
+                <source
+                    srcSet={srcSmall}
+                    media="(max-width: 959px)"
+                />
                 {html}
             </picture>
-        )
+        );
     }
 
     // If a percentage is provided, wrap the image in a div with a spacer
     if (percent) {
         html = (
-            <Box style={{
-                position: 'relative',
-                width: '100%'
-            }}>
-                <Box style={{
-                    'paddingTop': percent + '%',
-                    height: 0,
+            <div
+                style={{
+                    position: 'relative',
                     width: '100%'
-                }}></Box>
+                }}
+            >
+                <div
+                    style={{
+                        paddingTop: percent + '%',
+                        height: 0,
+                        width: '100%'
+                    }}
+                ></div>
                 {html}
-            </Box>
-        )
+            </div>
+        );
     }
 
     return html;
-}
+};
 
 // Define the prop types for the component
 Img.propTypes = {

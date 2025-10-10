@@ -1,0 +1,36 @@
+.main {
+    background: #000;
+    color: #fff;
+    padding: 10px;
+    padding-bottom: 20px;
+}
+
+.mainimg {
+    max-width: 150px;
+    padding: 0;
+    padding-top: 10px;
+}
+
+.maincopy {
+    padding: 0;
+}
+
+.main h2 {
+    font-size: 20px;
+    margin-bottom: 20px;
+}
+
+@media screen and (min-width: 768px) {
+    .mainimg {
+        max-width: none;
+        padding: 20px 0;
+    }
+
+    .maincopy {
+        padding: 40px 10px;
+    }
+
+    .main h2 {
+        font-size: 30px;
+    }
+}

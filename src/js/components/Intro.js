@@ -1,92 +1,73 @@
-import { lazy, Suspense, useEffect } from 'react';
+import { lazy, Suspense, useEffect, useRef } from 'react';
 import Img from '@/js/components/Img.js';
 import str from '@/js/utils/strings.js';
 import { useUser } from '@/js/context/UserContext.js';
-
-// Import Chakra UI components
-import { 
-    Box,
-    Heading,
-    Text,
-    AbsoluteCenter
-} from '@chakra-ui/react'
 
 // Import images
 import logo from '@/img/svg/ns-logo.svg';
 import backgroundImage from '@/img/comp/back.jpg';
 import backgroundOverlay from '@/img/comp/back-overlay.png';
 
+import * as styles from './Intro.module.css';
+
 // Lazy load the Stars component
 const Stars = lazy(() => import('@/js/components/Stars.js'));
 
-// Loading animation
-const loadingAnimation = () => {
-    setTimeout(function () {
-        document.querySelector('.intro-txt').style.opacity = 1;
-    }, 50);
-}
-
 // Intro component
 const Intro = () => {
-
     const { userID } = useUser();
+    const textRef = useRef(null);
 
-    useEffect(loadingAnimation, [])
+    useEffect(() => {
+        const timer = setTimeout(() => {
+            if (textRef.current) {
+                textRef.current.style.opacity = 1;
+            }
+        }, 50);
+
+        return () => clearTimeout(timer); // Cleanup on unmount
+    }, []);
 
     // Component HTML
     const html = (
-        <Box
-            bg="#000"
-            color="#fff"
-            position="relative"
-            height="100vh"
-            bgImage={`url(${backgroundImage})`}
-            bgPosition="center"
-            bgRepeat="no-repeat"
-            bgSize="cover"
-            minHeight="600px"
+        <div
+            className={styles.intro}
+            style={{ backgroundImage: `url(${backgroundImage})` }}
         >
-            <AbsoluteCenter 
-                axis="vertical"
-                className="intro-txt" 
-                align="center" 
-                p="5"
-                zIndex="2"
-                position="relative"
-                width="100%"
-                style={{opacity: 0, transition: 'opacity 1s linear 0.5s'}}
+            <div
+                className={styles.txt}
+                style={{ opacity: 0, transition: 'opacity 1s linear 0.5s' }}
+                ref={textRef}
             >
-                <Box width={{base: '100px', md: '150px'}}>
-                    <Img src={logo} alt={str('introLogoAlt')} width="100%" display="block"/>
-                </Box>
-                <Heading as="h1" fontSize={{base: '25vw', md: '200px'}} mb="2" fontWeight="semibold">
-                    {str('introH1')}
-                </Heading>
-                <Text fontSize={{base: 'lg', md: '3xl'}}>{str('introTxt', false, [userID])}</Text>
-            </AbsoluteCenter>
-            <Box
-                position="absolute"
-                top="0"
-                left="0"
-                width="100%"
-                height="100%"
-                zIndex="1"
-            >
-                <Img 
+                <div className={styles.logo}>
+                    <Img
+                        src={logo}
+                        alt={str('introLogoAlt')}
+                        width="100%"
+                        display="block"
+                    />
+                </div>
+                <h1>{str('introH1')}</h1>
+                <p>{str('introTxt', false, [userID])}</p>
+            </div>
+            <div className={styles.overlay}>
+                <Img
                     src={backgroundOverlay}
                     alt={str('introBackgroundAlt')}
                     objectFit="cover"
                     height="100%"
                     width="100%"
                 />
-            </Box>
-            <Suspense>
-                <Stars />
-            </Suspense>
-        </Box>
-    )
-    
+            </div>
+            <div className={styles.stars}>
+                <Suspense>
+                    <Stars />
+                </Suspense>
+            </div>
+        </div>
+    );
+
     return html;
-}
+};
 
 export default Intro;

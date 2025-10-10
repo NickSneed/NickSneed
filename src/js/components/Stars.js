@@ -1,20 +1,17 @@
 import React, { useEffect } from 'react';
 import {
-    Scene, 
-    PerspectiveCamera, 
-    WebGLRenderer, 
-    PCFSoftShadowMap, 
-    AmbientLight, 
-    Group, 
+    Scene,
+    PerspectiveCamera,
+    WebGLRenderer,
+    PCFSoftShadowMap,
+    AmbientLight,
+    Group,
     SphereGeometry,
     MeshStandardMaterial,
     Mesh
 } from 'three';
 
-// Import Chakra UI components
-import { 
-    Box
-} from '@chakra-ui/react'
+import * as styles from './Stars.module.css';
 
 const scene = new Scene(),
     camera = new PerspectiveCamera(50, window.innerWidth / window.innerHeight, 0.1, 10000),
@@ -25,7 +22,6 @@ let x = 0,
     renderer;
 
 const render = () => {
-
     // Set camera position
     x = x + distance;
     camera.position.x = cameraDistance * Math.cos(x);
@@ -34,10 +30,9 @@ const render = () => {
     // Render scene
     requestAnimationFrame(render);
     renderer.render(scene, camera);
-}
+};
 
 const setupScene = () => {
-
     // Create a renderer and add it to the DOM
     renderer = new WebGLRenderer({ antialias: true, alpha: true });
     renderer.shadowMap.enabled = true;
@@ -54,7 +49,7 @@ const setupScene = () => {
     // Set lights
     var ambientLight = new AmbientLight(0xffffff, 6);
     scene.add(ambientLight);
-}
+};
 
 const addElements = () => {
     let group = new Group(),
@@ -70,9 +65,8 @@ const addElements = () => {
 
     // Add particles to group
     for (i = 0; i < 2000; i++) {
-
         // Set particle color
-        if (Math.floor((Math.random() * 10) + 1) > 8) {
+        if (Math.floor(Math.random() * 10 + 1) > 8) {
             color = 0xff9239;
         } else {
             color = 0x72f5ff;
@@ -98,57 +92,41 @@ const addElements = () => {
         // Add particle to group
         group.add(particle);
     }
-}
+};
 
 const adjustSize = () => {
     renderer.setSize(window.innerWidth, window.innerHeight);
     camera.aspect = window.innerWidth / window.innerHeight;
     camera.updateProjectionMatrix();
-}
+};
 
-const addOpacityClass  = () => {
-    setTimeout(function() {
+const addOpacityClass = () => {
+    setTimeout(function () {
         const element = document.querySelector('.stars-3d');
         if (element) {
-            element.style.opacity = '1'; 
+            element.style.opacity = '1';
         }
     }, 500);
-}
+};
 
 const initStars = () => {
     setupScene();
     addElements();
     render();
-    addOpacityClass()
+    addOpacityClass();
 
     // Adjust size on resize
-    window.addEventListener("resize", adjustSize);
-}
+    window.addEventListener('resize', adjustSize);
+};
 
 // Stars component
 const Stars = () => {
     useEffect(initStars, []);
 
     // Component HTML
-    const html = (
-        <Box 
-            className="stars-3d" 
-            position="absolute" 
-            zIndex="0" 
-            top="0" 
-            h="100%"
-            w="100%"
-            filter="blur(1px)"
-            opacity="0"
-            transition="opacity 1s"
-            sx={{canvas: {
-                width: '100% !important',
-                height: '100% !important'
-            }}}
-        ></Box>
-    )
+    const html = <div className={`stars-3d ${styles.stars}`}></div>;
 
     return html;
-}
+};
 
 export default Stars;

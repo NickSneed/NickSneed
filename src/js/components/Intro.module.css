@@ -1,0 +1,56 @@
+.intro {
+    background: #000;
+    color: #fff;
+    position: relative;
+    height: 100vh;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    min-height: 600px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 70vh;
+    padding: 20px 40px;
+    text-align: center;
+    position: relative;
+    z-index: 3;
+}
+
+.intro h1 {
+    font-size: 100px;
+}
+
+.intro p {
+    font-size: 20px;
+}
+
+.txt {
+    position: relative;
+    z-index: 3;
+}
+
+.overlay,
+.stars {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 2;
+}
+
+.stars {
+    z-index: 1;
+}
+
+.logo {
+    margin: 0 auto;
+    width: 30%;
+}
+
+@media screen and (min-width: 768px) {
+    .intro p {
+        font-size: 30px;
+    }
+}
