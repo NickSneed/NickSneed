@@ -5,7 +5,6 @@ import Img from '@/js/components/Img';
 
 // Mock the react-lazy-load-image-component
 jest.mock('react-lazy-load-image-component', () => ({
-    // eslint-disable-next-line @typescript-eslint/no-explicit-any
     LazyLoadImage: (props) => <img {...props} />
 }));
 

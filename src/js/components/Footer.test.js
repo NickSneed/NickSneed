@@ -6,6 +6,7 @@ import Footer from '@/js/components/Footer';
 
 // Add mocks
 jest.mock('@/js/components/Copy', () => {
+    // eslint-disable-next-line react/display-name
     return () => <div data-testid="copy-component">Mocked Copy</div>;
 });
 jest.mock('@/js/components/Img');
