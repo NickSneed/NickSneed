@@ -5,8 +5,10 @@ import '@testing-library/jest-dom';
 import Footer from '@/js/components/Footer';
 
 // Add mocks
-jest.mock('@/js/components/Copy');
-jest.mock('@/js/components/Img')
+jest.mock('@/js/components/Copy', () => {
+    return () => <div data-testid="copy-component">Mocked Copy</div>;
+});
+jest.mock('@/js/components/Img');
 
 // Mock the image imports
 jest.mock('@/img/svg/logo-instagram.svg', () => 'instagram.svg');
@@ -14,6 +16,13 @@ jest.mock('@/img/comp/logo-tumblr.png', () => 'tumblr.png');
 jest.mock('@/img/comp/logo-github.png', () => 'github.png');
 jest.mock('@/img/svg/logo-x.svg', () => 'x.svg');
 jest.mock('@/img/comp/logo-linkedin.png', () => 'linkedin.png');
+
+// Mock CSS Modules
+jest.mock('./Footer.module.css', () => ({
+    footer: 'footer-style',
+    footerContainer: 'footer-container-style',
+    socialLinks: 'social-links-style'
+}));
 
 describe('Footer Component', () => {
     test('renders footer with correct structure', () => {
@@ -24,7 +33,7 @@ describe('Footer Component', () => {
 
     test('renders all social media links with correct attributes', () => {
         render(<Footer />);
-        
+
         const expectedLinks = [
             'https://www.instagram.com/bobrumbly/',
             'https://bobrumbly.com',
@@ -32,10 +41,10 @@ describe('Footer Component', () => {
             'https://x.com/BobRumbly',
             'https://www.linkedin.com/in/nsneed/'
         ];
-    
+
         const links = screen.getAllByRole('link');
         expect(links).toHaveLength(expectedLinks.length);
-    
+
         links.forEach((link, index) => {
             expect(link).toHaveAttribute('href', expectedLinks[index]);
             expect(link).toHaveAttribute('target', '_blank');
@@ -44,18 +53,12 @@ describe('Footer Component', () => {
             expect(img).toHaveAttribute('alt');
         });
     });
-    
-    test('renders with responsive styles', () => {
+
+    test('renders with correct styles from CSS modules', () => {
         render(<Footer />);
-        const box = screen.getByRole('contentinfo').firstChild;
-        expect(box).toHaveStyle({ backgroundColor: '#111' });
-        
-        const flex = box.firstChild;
-        expect(flex).toHaveStyle({
-            display: 'flex',
-            alignItems: 'center',
-            justifyContent: 'space-between'
-        });
+        const footerDiv = screen.getByRole('contentinfo').firstChild;
+        expect(footerDiv).toHaveClass('footer-style');
+        expect(footerDiv.firstChild).toHaveClass('footer-container-style');
     });
 
     test('renders Copy component', () => {

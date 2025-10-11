@@ -7,6 +7,9 @@ dist/
 # Optional npm cache directory
 .npm
 
+# Test coverage
+/coverage
+
 # Environment variables
 .env
 .env.test
