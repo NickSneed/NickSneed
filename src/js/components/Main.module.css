@@ -17,6 +17,7 @@
     max-width: 10rem;
     padding: 0;
     padding-top: 1rem;
+    padding-bottom: 0.6rem;
 }
 
 .maincopy {
@@ -24,7 +25,7 @@
 }
 
 .main h2 {
-    font-size: 2rem;
+    font-size: 1.4rem;
     margin-bottom: 2rem;
 }
 
@@ -38,10 +39,13 @@
     }
 
     .mainimg {
+        flex: 1;
         max-width: none;
+        padding: 0;
     }
 
     .maincopy {
+        flex: 2;
         padding: 2rem;
     }
 
@@ -53,13 +57,5 @@
         display: flex;
         align-items: center;
         gap: 2rem;
-    }
-
-    .maincopy {
-        flex: 2;
-    }
-
-    .mainimg {
-        flex: 1;
     }
 }

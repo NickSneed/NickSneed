@@ -1,6 +1,6 @@
 .footer {
     background: #111;
-    padding: 1rem 2.1rem;
+    padding: 2.4rem 2rem 1.4rem;
 }
 
 .footerContainer {
@@ -23,6 +23,10 @@
 }
 
 @media screen and (min-width: 768px) {
+    .footer {
+        padding: 1.2rem 2rem;
+    }
+
     .footerContainer {
         flex-direction: row;
     }

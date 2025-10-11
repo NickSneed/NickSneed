@@ -7,7 +7,7 @@
     box-sizing: border-box;
     color: #fff;
     display: flex;
-    height: 100vh;
+    height: 70vh;
     justify-content: center;
     min-height: 26rem;
     padding: 2rem;
@@ -22,12 +22,12 @@
 }
 
 .intro h1 {
-    font-size: 4rem;
+    font-size: 5rem;
     margin-block: 0.5rem;
 }
 
 .intro p {
-    font-size: 0.8rem;
+    font-size: 1.1rem;
     line-height: 1.4;
     margin-block-end: 0;
 }
@@ -51,11 +51,15 @@
     z-index: 1;
 }
 @media screen and (min-width: 768px) {
+    .intro {
+        height: 100vh;
+    }
+
     .intro h1 {
         font-size: 8rem;
     }
 
     .intro p {
-        font-size: 2rem;
+        font-size: 1.6rem;
     }
 }
