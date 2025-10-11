@@ -1,25 +1,44 @@
+:root {
+    --blue: #3c7aff;
+    --white: #fff;
+}
+
+html,
 body {
-    color: #fff;
-    font-optical-sizing: 'auto';
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    color: var(--white);
     font-family: Montserrat, serif;
+    font-optical-sizing: 'auto';
 }
 
 h1,
 h2 {
-    font-weight: 600;
     font-family: Montserrat, serif;
+    font-weight: 600;
 }
 
 p {
-    color: #fff;
-    margin-bottom: 20px;
+    color: var(--white);
     font-family: Montserrat, serif;
+    margin-bottom: 1.5rem;
+    max-width: 30rem;
 }
 
 .btn {
-    background-color: #3c7aff;
+    background-color: var(--blue);
+    border-radius: 0.3rem 1rem;
+    color: var(--white);
     display: inline-block;
-    padding: 10px 20px;
     font-weight: 600;
-    border-radius: 10px 20px;
+    padding: 0.8rem 1.8rem;
+    text-decoration: none;
+}
+
+.btn:hover {
+    background-color: var(--white);
+    color: var(--blue);
 }

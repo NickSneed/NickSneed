@@ -1,14 +1,22 @@
 .main {
     background: #000;
     color: #fff;
-    padding: 10px;
-    padding-bottom: 20px;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 4rem;
+    max-width: 100rem;
+    margin: 0 auto;
+    padding: 3rem;
+}
+
+.full {
+    grid-column: 1 / -1;
 }
 
 .mainimg {
-    max-width: 150px;
+    max-width: 10rem;
     padding: 0;
-    padding-top: 10px;
+    padding-top: 1rem;
 }
 
 .maincopy {
@@ -16,21 +24,42 @@
 }
 
 .main h2 {
-    font-size: 20px;
-    margin-bottom: 20px;
+    font-size: 2rem;
+    margin-bottom: 2rem;
+}
+
+.introContainer {
+    display: block;
 }
 
 @media screen and (min-width: 768px) {
+    .main {
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+
     .mainimg {
         max-width: none;
-        padding: 20px 0;
     }
 
     .maincopy {
-        padding: 40px 10px;
+        padding: 2rem;
     }
 
     .main h2 {
-        font-size: 30px;
+        font-size: 3rem;
+    }
+
+    .introContainer {
+        display: flex;
+        align-items: center;
+        gap: 2rem;
+    }
+
+    .maincopy {
+        flex: 2;
+    }
+
+    .mainimg {
+        flex: 1;
     }
 }

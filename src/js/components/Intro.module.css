@@ -1,33 +1,40 @@
 .intro {
+    align-items: center;
     background: #000;
-    color: #fff;
-    position: relative;
-    height: 100vh;
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
-    min-height: 600px;
+    box-sizing: border-box;
+    color: #fff;
     display: flex;
-    align-items: center;
+    height: 100vh;
     justify-content: center;
-    min-height: 70vh;
-    padding: 20px 40px;
-    text-align: center;
+    min-height: 26rem;
+    padding: 2rem;
     position: relative;
+    text-align: center;
     z-index: 3;
-}
-
-.intro h1 {
-    font-size: 100px;
-}
-
-.intro p {
-    font-size: 20px;
 }
 
 .txt {
     position: relative;
     z-index: 3;
+}
+
+.intro h1 {
+    font-size: 4rem;
+    margin-block: 0.5rem;
+}
+
+.intro p {
+    font-size: 0.8rem;
+    line-height: 1.4;
+    margin-block-end: 0;
+}
+
+.logo {
+    margin: 0 auto;
+    width: 30%;
 }
 
 .overlay,
@@ -43,14 +50,12 @@
 .stars {
     z-index: 1;
 }
-
-.logo {
-    margin: 0 auto;
-    width: 30%;
-}
-
 @media screen and (min-width: 768px) {
+    .intro h1 {
+        font-size: 8rem;
+    }
+
     .intro p {
-        font-size: 30px;
+        font-size: 2rem;
     }
 }

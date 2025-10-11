@@ -1,8 +1,4 @@
-.socialTile {
-    padding: 0 4px;
-}
-
-.img {
-    max-width: 150px;
-    margin-bottom: 10px;
+.socialTile .img {
+    max-width: 10rem;
+    margin-bottom: 1rem;
 }
