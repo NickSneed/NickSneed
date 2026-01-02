@@ -39,8 +39,7 @@ describe('Footer Component', () => {
             'https://www.instagram.com/bobrumbly/',
             'https://bobrumbly.com',
             'https://github.com/NickSneed/',
-            'https://x.com/BobRumbly',
-            'https://www.linkedin.com/in/nsneed/'
+            'https://x.com/BobRumbly'
         ];
 
         const links = screen.getAllByRole('link');

@@ -7,7 +7,6 @@ import logoInsta from '@/img/svg/logo-instagram.svg';
 import logoTumblr from '@/img/comp/logo-tumblr.png';
 import logoGitHub from '@/img/comp/logo-github.png';
 import logoX from '@/img/svg/logo-x.svg';
-import logoLinkedIn from '@/img/comp/logo-linkedin.png';
 
 import * as styles from './Footer.module.css';
 
@@ -63,18 +62,6 @@ const Footer = () => {
                             <Img
                                 src={logoX}
                                 alt={str('footerXAlt')}
-                                display="inline-block"
-                                height="100%"
-                            />
-                        </a>
-                        <a
-                            href="https://www.linkedin.com/in/nsneed/"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                        >
-                            <Img
-                                src={logoLinkedIn}
-                                alt={str('footerLinkedInAlt')}
                                 display="inline-block"
                                 height="100%"
                             />

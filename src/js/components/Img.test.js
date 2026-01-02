@@ -46,12 +46,6 @@ describe('Image Component', () => {
         expect(picture.querySelector('source')).toHaveAttribute('srcset', 'small-image.jpg');
     });
 
-    test('renders wrapper div when percent prop is provided', () => {
-        const { container } = render(<Img {...mockProps} />);
-        const wrapper = container.firstChild;
-        expect(wrapper).toHaveStyle({ position: 'relative', width: '100%' });
-    });
-
     test('matches snapshot', () => {
         const { container } = render(
             <Img
@@ -59,7 +53,6 @@ describe('Image Component', () => {
                 alt={mockProps.alt}
                 className={mockProps.className}
                 srcSmall="small-image.jpg"
-                percent={mockProps.percent}
             />
         );
         expect(container).toMatchSnapshot();

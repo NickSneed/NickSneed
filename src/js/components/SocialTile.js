@@ -14,7 +14,8 @@ const SocialTile = (props) => {
                     src={img}
                     alt={alt}
                     className="wide-sm"
-                    percent={100}
+                    aspect="1 / 1"
+                    width="100%"
                 />
             </div>
             <h2>{title}</h2>

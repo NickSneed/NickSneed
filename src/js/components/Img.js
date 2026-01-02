@@ -15,28 +15,26 @@ const Img = (props) => {
         srcSmall,
         alt,
         className,
-        percent,
         width = 'auto',
         height = 'auto',
         display = 'block',
-        maxWidth = 'none'
+        maxWidth = 'none',
+        aspect = 'none'
     } = props;
 
     // Base HTML for an image
     let html = (
         <LazyLoadImage
             style={{
-                display: percent ? 'block' : display,
-                height: percent ? '100%' : height,
-                width: percent ? '100%' : width,
+                display: display,
+                height: height,
+                width: width,
                 opacity: 0,
                 transition: 'opacity 1s linear 0s',
                 maxWidth: maxWidth,
                 margin: '0 auto',
-                position: percent ? 'absolute' : 'static',
-                left: percent ? '0' : 'auto',
-                top: percent ? '0' : 'auto',
-                objectFit: percent ? 'contain' : 'cover'
+                aspectRatio: aspect ? aspect : 'none',
+                objectFit: 'cover'
             }}
             src={src}
             alt={alt}
@@ -60,27 +58,6 @@ const Img = (props) => {
         );
     }
 
-    // If a percentage is provided, wrap the image in a div with a spacer
-    if (percent) {
-        html = (
-            <div
-                style={{
-                    position: 'relative',
-                    width: '100%'
-                }}
-            >
-                <div
-                    style={{
-                        paddingTop: percent + '%',
-                        height: 0,
-                        width: '100%'
-                    }}
-                ></div>
-                {html}
-            </div>
-        );
-    }
-
     return html;
 };
 
@@ -90,11 +67,11 @@ Img.propTypes = {
     srcSmall: PropTypes.string.notRequired,
     alt: PropTypes.string.isRequired,
     className: PropTypes.string.notRequired,
-    percent: PropTypes.string.notRequired,
     width: PropTypes.string.notRequired,
     height: PropTypes.string.notRequired,
     display: PropTypes.string.notRequired,
-    maxWidth: PropTypes.string.notRequired
+    maxWidth: PropTypes.string.notRequired,
+    aspect: PropTypes.string.notRequired
 };
 
 export default Img;

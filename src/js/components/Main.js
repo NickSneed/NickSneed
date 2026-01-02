@@ -26,7 +26,8 @@ const Main = () => {
                         src={familyImg}
                         srcSmall={familyImgSmall}
                         alt="My family"
-                        percent={100}
+                        aspect="1 / 1"
+                        width="100%"
                     />
                 </div>
                 <div className={styles.maincopy}>

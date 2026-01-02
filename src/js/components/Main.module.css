@@ -1,12 +1,10 @@
 .main {
-    background: #000;
-    color: #fff;
     display: grid;
     grid-template-columns: 1fr;
     gap: 4rem;
     max-width: 100rem;
     margin: 0 auto;
-    padding: 3rem;
+    padding: 1.5rem;
 }
 
 .full {
@@ -25,7 +23,7 @@
 }
 
 .main h2 {
-    font-size: 1.4rem;
+    font-size: 2rem;
     margin-bottom: 2rem;
 }
 
@@ -36,6 +34,7 @@
 @media screen and (min-width: 768px) {
     .main {
         grid-template-columns: 1fr 1fr 1fr;
+        padding: 3rem;
     }
 
     .mainimg {

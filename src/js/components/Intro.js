@@ -54,7 +54,6 @@ const Intro = () => {
                 <Img
                     src={backgroundOverlay}
                     alt={str('introBackgroundAlt')}
-                    objectFit="cover"
                     height="100%"
                     width="100%"
                 />
