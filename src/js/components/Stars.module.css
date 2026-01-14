@@ -1,0 +1,15 @@
+.stars {
+    position: absolute;
+    z-index: 0;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    filter: blur(1px);
+    opacity: 0;
+    transition: opacity 1s;
+}
+
+.stars canvas {
+    width: 100% !important;
+    height: 100% !important;
+}

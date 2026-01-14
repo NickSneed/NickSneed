@@ -1,0 +1,58 @@
+:root {
+    --blue: #3c7aff;
+    --white: #fff;
+    --maincopy: #000;
+}
+
+html,
+body {
+    background: #fff;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    color: var(--maincopy);
+    font-family: 'SUSE Mono', sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 10px;
+    font-optical-sizing: 'auto';
+}
+
+h1 {
+    font-family: 'Major Mono Display', monospace;
+    font-weight: 400;
+    font-style: normal;
+}
+
+h2 {
+    font-family: 'Jura', sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 600;
+    font-style: normal;
+}
+
+p {
+    font-size: 1.3rem;
+    font-weight: 600;
+    line-height: 1.5;
+    margin-bottom: 2rem;
+    max-width: 30rem;
+}
+
+.btn {
+    background-color: var(--blue);
+    border-radius: 0.3rem 1rem;
+    color: var(--white);
+    display: inline-block;
+    font-size: 1.5rem;
+    font-weight: 400;
+    padding: 0.8rem 1.8rem;
+    text-decoration: none;
+}
+
+.btn:hover {
+    background-color: var(--white);
+    color: var(--blue);
+}

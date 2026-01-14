@@ -1,0 +1,59 @@
+.intro {
+    align-items: center;
+    background: #000;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    box-sizing: border-box;
+    color: #fff;
+    display: flex;
+    height: 70vh;
+    justify-content: center;
+    min-height: 26rem;
+    padding: 2rem;
+    position: relative;
+    text-align: center;
+    z-index: 3;
+}
+
+.txt {
+    position: relative;
+    z-index: 3;
+}
+
+.intro h1 {
+    font-size: 4rem;
+    margin: 1rem auto;
+}
+
+.intro p {
+    margin: 2rem auto;
+}
+
+.logo {
+    margin: 0 auto;
+    width: 30%;
+}
+
+.overlay,
+.stars {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 2;
+}
+
+.stars {
+    z-index: 1;
+}
+@media screen and (min-width: 768px) {
+    .intro {
+        height: 100vh;
+    }
+
+    .intro h1 {
+        font-size: 8rem;
+    }
+}

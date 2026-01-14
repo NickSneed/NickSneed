@@ -1,0 +1,18 @@
+// Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
+
+exports[`Image Component matches snapshot 1`] = `
+<div>
+  <picture>
+    <source
+      media="(max-width: 959px)"
+      srcset="small-image.jpg"
+    />
+    <img
+      alt="Test image"
+      class="test-class"
+      src="test-image.jpg"
+      style="display: block; height: auto; width: auto; opacity: 0; transition: opacity 1s linear 0s; max-width: none; margin: 0px auto; object-fit: cover;"
+    />
+  </picture>
+</div>
+`;
