@@ -1,5 +1,6 @@
 :root {
     --blue: #3c7aff;
+    --lightblue: #bad0ff;
     --white: #fff;
     --maincopy: #000;
 }
@@ -53,6 +54,6 @@ p {
 }
 
 .btn:hover {
-    background-color: var(--white);
+    background-color: var(--lightblue);
     color: var(--blue);
 }
