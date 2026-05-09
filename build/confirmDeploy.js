@@ -25,17 +25,17 @@ async function runCommand(command, description) {
 
 async function deploy() {
     // Run tests first
-    if (!await runCommand('npm run test', 'tests')) {
+    if (!(await runCommand('npm run test', 'tests'))) {
         return false;
     }
 
     // Build the project
-    if (!await runCommand('npm run build', 'build')) {
+    if (!(await runCommand('npm run build', 'build', { NODE_ENV: 'production' }))) {
         return false;
     }
 
     // Deploy to GitHub Pages
-    if (!await runCommand('gh-pages -d dist --cname nicksneed.com', 'deployment')) {
+    if (!(await runCommand('gh-pages -d dist --cname nicksneed.com', 'deployment'))) {
         return false;
     }
 

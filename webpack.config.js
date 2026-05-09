@@ -2,13 +2,18 @@ import path from 'path';
 import { fileURLToPath } from 'url';
 import HtmlWebpackPlugin from 'html-webpack-plugin';
 import CopyWebpackPlugin from 'copy-webpack-plugin';
+import MiniCssExtractPlugin from 'mini-css-extract-plugin';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
+// eslint-disable-next-line no-undef
+const isProduction = process.env.NODE_ENV === 'production';
+
 export default {
     entry: './src/js/App.js',
-    mode: 'production',
+    mode: isProduction ? 'production' : 'development',
+    devtool: isProduction ? 'source-map' : 'eval-source-map',
     output: {
         filename: 'app.js',
         path: path.resolve(__dirname, 'dist')
@@ -41,13 +46,13 @@ export default {
             {
                 test: /\.css$/,
                 exclude: /\.module\.css$/, // Exclude CSS Modules
-                use: ['style-loader', 'css-loader']
+                use: [isProduction ? MiniCssExtractPlugin.loader : 'style-loader', 'css-loader']
             },
             // Rule for CSS Modules
             {
                 test: /\.module\.css$/, // Target files ending with .module.css
                 use: [
-                    'style-loader',
+                    isProduction ? MiniCssExtractPlugin.loader : 'style-loader',
                     {
                         loader: 'css-loader',
                         options: {
@@ -79,8 +84,12 @@ export default {
                 { from: 'src/pwa-icon.png', to: 'pwa-icon.png' }
             ]
         }),
+        new MiniCssExtractPlugin({
+            filename: '[name].css'
+        }),
         new HtmlWebpackPlugin({
-            template: './src/index.html'
+            template: './src/index.html',
+            isProduction
         })
     ],
     performance: {
