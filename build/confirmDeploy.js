@@ -10,10 +10,12 @@ const rl = readline.createInterface({
     output: process.stdout
 });
 
-async function runCommand(command, description) {
+async function runCommand(command, description, env = {}) {
     console.log(`Running ${description}...`);
     try {
-        const { stdout, stderr } = await execPromise(command);
+        const { stdout, stderr } = await execPromise(command, {
+            env: { ...process.env, ...env }
+        });
         if (stderr) console.error(`${description} stderr:`, stderr);
         console.log(`${description} completed:`, stdout);
         return true;
