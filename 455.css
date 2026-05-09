@@ -1,0 +1,18 @@
+.Stars-module__stars--ScsaT {
+    position: absolute;
+    z-index: 0;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    filter: blur(1px);
+    opacity: 0;
+    transition: opacity 1s;
+}
+
+.Stars-module__stars--ScsaT canvas {
+    width: 100% !important;
+    height: 100% !important;
+}
+
+
+/*# sourceMappingURL=455.css.map*/

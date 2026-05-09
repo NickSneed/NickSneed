@@ -1,0 +1,229 @@
+.Footer-module__footer--_83f0 {
+    padding: 2.4rem 2rem 1.4rem;
+}
+
+.Footer-module__footerContainer--QXFPa {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: column;
+}
+
+.Footer-module__socialLinks--tCQ5l {
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 1rem;
+}
+
+.Footer-module__socialLinks--tCQ5l a {
+    display: inline-block;
+    height: 1.5rem;
+    margin: 0 0.5rem;
+    filter: invert(1);
+}
+
+@media screen and (min-width: 768px) {
+    .Footer-module__footer--_83f0 {
+        padding: 1.2rem 2rem;
+    }
+
+    .Footer-module__footerContainer--QXFPa {
+        flex-direction: row;
+    }
+    .Footer-module__socialLinks--tCQ5l {
+        margin-bottom: 0;
+    }
+}
+
+.Intro-module__intro--hHyn_ {
+    align-items: center;
+    background: #000;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    box-sizing: border-box;
+    color: #fff;
+    display: flex;
+    height: 70vh;
+    justify-content: center;
+    min-height: 26rem;
+    padding: 2rem;
+    position: relative;
+    text-align: center;
+    z-index: 3;
+}
+
+.Intro-module__txt--_MBK8 {
+    position: relative;
+    z-index: 3;
+}
+
+.Intro-module__intro--hHyn_ h1 {
+    font-size: 4rem;
+    margin: 1rem auto;
+}
+
+.Intro-module__intro--hHyn_ p {
+    margin: 2rem auto;
+}
+
+.Intro-module__logo--QZha3 {
+    margin: 0 auto;
+    width: 30%;
+}
+
+.Intro-module__overlay--mOpIN,
+.Intro-module__stars--CTRxx {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 2;
+}
+
+.Intro-module__stars--CTRxx {
+    z-index: 1;
+}
+@media screen and (min-width: 768px) {
+    .Intro-module__intro--hHyn_ {
+        height: 100vh;
+    }
+
+    .Intro-module__intro--hHyn_ h1 {
+        font-size: 8rem;
+    }
+}
+
+.SocialTile-module__socialTile--jpxpZ .SocialTile-module__img--K6bxe {
+    max-width: 10rem;
+    margin-bottom: 1rem;
+}
+
+.SpaceLaunches-module__spaceLaunches--au4J0 {
+    padding: 1rem 0;
+}
+
+.Main-module__main--PobLO {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 4rem;
+    max-width: 100rem;
+    margin: 0 auto;
+    padding: 1.5rem;
+}
+
+.Main-module__full--KJR8G {
+    grid-column: 1 / -1;
+}
+
+.Main-module__mainimg--dZVvV {
+    max-width: 10rem;
+    padding: 0;
+    padding-top: 1rem;
+    padding-bottom: 0.6rem;
+}
+
+.Main-module__maincopy--VRzT4 {
+    padding: 0;
+}
+
+.Main-module__main--PobLO h2 {
+    font-size: 2rem;
+    margin-bottom: 2rem;
+}
+
+.Main-module__introContainer--ETcoI {
+    display: block;
+}
+
+@media screen and (min-width: 768px) {
+    .Main-module__main--PobLO {
+        grid-template-columns: 1fr 1fr 1fr;
+        padding: 3rem;
+    }
+
+    .Main-module__mainimg--dZVvV {
+        flex: 1;
+        max-width: none;
+        padding: 0;
+    }
+
+    .Main-module__maincopy--VRzT4 {
+        flex: 2;
+        padding: 2rem;
+    }
+
+    .Main-module__main--PobLO h2 {
+        font-size: 3rem;
+    }
+
+    .Main-module__introContainer--ETcoI {
+        display: flex;
+        align-items: center;
+        gap: 2rem;
+    }
+}
+
+:root {
+    --blue: #3c7aff;
+    --lightblue: #bad0ff;
+    --white: #fff;
+    --maincopy: #000;
+}
+
+html,
+body {
+    background: #fff;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    color: var(--maincopy);
+    font-family: 'SUSE Mono', sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 10px;
+    font-optical-sizing: 'auto';
+}
+
+h1 {
+    font-family: 'Major Mono Display', monospace;
+    font-weight: 400;
+    font-style: normal;
+}
+
+h2 {
+    font-family: 'Jura', sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 600;
+    font-style: normal;
+}
+
+p {
+    font-size: 1.3rem;
+    font-weight: 600;
+    line-height: 1.5;
+    margin-bottom: 2rem;
+    max-width: 30rem;
+}
+
+.btn {
+    background-color: var(--blue);
+    border-radius: 0.3rem 1rem;
+    color: var(--white);
+    display: inline-block;
+    font-size: 1.5rem;
+    font-weight: 400;
+    padding: 0.8rem 1.8rem;
+    text-decoration: none;
+}
+
+.btn:hover {
+    background-color: var(--lightblue);
+    color: var(--blue);
+}
+
+
+/*# sourceMappingURL=main.css.map*/
