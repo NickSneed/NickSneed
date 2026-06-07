@@ -15,7 +15,7 @@ export default {
     mode: isProduction ? 'production' : 'development',
     devtool: isProduction ? 'source-map' : 'eval-source-map',
     output: {
-        filename: isProduction ? '[name].js' : '[name].[contenthash].js',
+        filename: isProduction ? '[name].[contenthash].js' : '[name].js',
         path: path.resolve(__dirname, 'dist')
     },
     resolve: {
