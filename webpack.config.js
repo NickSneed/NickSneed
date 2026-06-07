@@ -15,7 +15,7 @@ export default {
     mode: isProduction ? 'production' : 'development',
     devtool: isProduction ? 'source-map' : 'eval-source-map',
     output: {
-        filename: '[name].[contenthash].js',
+        filename: isProduction ? '[name].js' : '[name].[contenthash].js',
         path: path.resolve(__dirname, 'dist')
     },
     resolve: {
@@ -85,7 +85,7 @@ export default {
             ]
         }),
         new MiniCssExtractPlugin({
-            filename: '[name].css'
+            filename: isProduction ? '[name].[contenthash].css' : '[name].css'
         }),
         new HtmlWebpackPlugin({
             template: './src/index.html',
