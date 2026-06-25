@@ -11,7 +11,7 @@ exports[`Image Component matches snapshot 1`] = `
       alt="Test image"
       class="test-class"
       src="test-image.jpg"
-      style="display: block; height: auto; width: auto; opacity: 0; transition: opacity 1s linear 0s; max-width: none; margin: 0px auto; object-fit: cover;"
+      style="display: block; height: auto; width: auto; opacity: 0; transition: opacity 1s linear 0s; max-width: none; margin: 0px auto; aspect-ratio: none; object-fit: cover;"
     />
   </picture>
 </div>
