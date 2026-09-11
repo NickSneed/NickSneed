@@ -50,8 +50,8 @@
         "react-router-dom": "^7.18.1",
         "three": "^0.171.0"
     },
-    "overrides": {
-        "uuid": "^11.1.0",
-        "fast-uri": "3.1.6"
+    "allowScripts": {
+        "@parcel/watcher@2.6.0": true,
+        "unrs-resolver@1.12.2": true
     }
 }
