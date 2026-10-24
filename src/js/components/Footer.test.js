@@ -1,6 +1,6 @@
 /* global jest, describe, test, expect */
 
-import { render, screen, within } from '@testing-library/react';
+import { render, screen } from '@testing-library/react';
 import '@testing-library/jest-dom';
 import Footer from '@/js/components/Footer';
 
@@ -22,7 +22,8 @@ jest.mock('@/img/comp/logo-linkedin.png', () => 'linkedin.png');
 jest.mock('./Footer.module.css', () => ({
     footer: 'footer-style',
     footerContainer: 'footer-container-style',
-    socialLinks: 'social-links-style'
+    socialLinks: 'social-links-style',
+    attribution: 'attribution-style'
 }));
 
 describe('Footer Component', () => {
@@ -32,14 +33,15 @@ describe('Footer Component', () => {
         expect(footerElement).toBeInTheDocument();
     });
 
-    test('renders all social media links with correct attributes', () => {
+    test('renders all social media links and attribution link with correct attributes', () => {
         render(<Footer />);
 
         const expectedLinks = [
             'https://www.instagram.com/bobrumbly/',
             'https://bobrumbly.com',
             'https://github.com/NickSneed/',
-            'https://x.com/BobRumbly'
+            'https://x.com/BobRumbly',
+            'https://creativecommons.org/licenses/by/4.0/deed.en'
         ];
 
         const links = screen.getAllByRole('link');
@@ -49,8 +51,6 @@ describe('Footer Component', () => {
             expect(link).toHaveAttribute('href', expectedLinks[index]);
             expect(link).toHaveAttribute('target', '_blank');
             expect(link).toHaveAttribute('rel', 'noopener noreferrer');
-            const img = within(link).getByRole('img');
-            expect(img).toHaveAttribute('alt');
         });
     });
 

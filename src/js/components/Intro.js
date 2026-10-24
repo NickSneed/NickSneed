@@ -6,7 +6,6 @@ import { useUser } from '@/js/context/UserContext.js';
 // Import images
 import logo from '@/img/svg/ns-logo.svg';
 import backgroundImage from '@/img/comp/back.jpg';
-import backgroundOverlay from '@/img/comp/back-overlay.png';
 
 import * as styles from './Intro.module.css';
 
@@ -49,14 +48,6 @@ const Intro = () => {
                 </div>
                 <h1>{str('introH1')}</h1>
                 <p>{str('introTxt', false, [userID])}</p>
-            </div>
-            <div className={styles.overlay}>
-                <Img
-                    src={backgroundOverlay}
-                    alt={str('introBackgroundAlt')}
-                    height="100%"
-                    width="100%"
-                />
             </div>
             <div className={styles.stars}>
                 <Suspense>

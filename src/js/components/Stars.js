@@ -16,7 +16,8 @@ import * as styles from './Stars.module.css';
 const scene = new Scene(),
     camera = new PerspectiveCamera(50, window.innerWidth / window.innerHeight, 0.1, 10000),
     distance = 0.001,
-    cameraDistance = 300;
+    cameraDistance = 300,
+    starAmount = 1000;
 
 let x = 0,
     renderer;
@@ -64,12 +65,12 @@ const addElements = () => {
     scene.add(group);
 
     // Add particles to group
-    for (i = 0; i < 2000; i++) {
+    for (i = 0; i < starAmount; i++) {
         // Set particle color
         if (Math.floor(Math.random() * 10 + 1) > 8) {
             color = 0xff9239;
         } else {
-            color = 0x72f5ff;
+            color = 0xffffff;
         }
 
         // Create particle

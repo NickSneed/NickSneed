@@ -68,6 +68,16 @@ const Footer = () => {
                         </a>
                     </div>
                     <Copy />
+                    <div className={styles.attribution}>
+                        <span>NASA photo used under the </span>
+                        <a
+                            href="https://creativecommons.org/licenses/by/4.0/deed.en"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                        >
+                            CC BY 4.0 License
+                        </a>
+                    </div>
                 </div>
             </div>
         </footer>
